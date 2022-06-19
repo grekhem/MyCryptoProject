@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A2F4E50285DD9850070BAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E4F285DD9850070BAC7 /* AppDelegate.swift */; };
+		4A2F4E52285DD9850070BAC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E51285DD9850070BAC7 /* SceneDelegate.swift */; };
+		4A2F4E59285DD9860070BAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F4E58285DD9860070BAC7 /* Assets.xcassets */; };
+		4A2F4E5C285DD9860070BAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */; };
+		4A2F4E64285DDAD60070BAC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F4E63285DDAD60070BAC7 /* GoogleService-Info.plist */; };
+		4A2F4E67285DDB8F0070BAC7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A2F4E66285DDB8F0070BAC7 /* FirebaseAuth */; };
+		4A2F4E6A285DDFA40070BAC7 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E69285DDFA40070BAC7 /* AuthorizationViewController.swift */; };
+		4A2F4E6C285DE0C50070BAC7 /* AuthtorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E6B285DE0C50070BAC7 /* AuthtorizationAssembly.swift */; };
+		4A2F4E6E285DE2A50070BAC7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E6D285DE2A50070BAC7 /* AuthService.swift */; };
+		4A2F4E71285DE5700070BAC7 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E70285DE5700070BAC7 /* AuthorizationView.swift */; };
+		4A2F4E73285DE6530070BAC7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E72285DE6530070BAC7 /* UserModel.swift */; };
+		4A2F4E75285DEBD80070BAC7 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E74285DEBD80070BAC7 /* AuthorizationRouter.swift */; };
+		4A2F4E77285DEF730070BAC7 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E76285DEF730070BAC7 /* AuthorizationPresenter.swift */; };
+		4A2F4E79285DF0720070BAC7 /* AuthorizationIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E78285DF0720070BAC7 /* AuthorizationIteractor.swift */; };
+		4A2F4E7B285DF84C0070BAC7 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E7A285DF84C0070BAC7 /* TextFieldView.swift */; };
+		4A2F4E81285DFA660070BAC7 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E80285DFA660070BAC7 /* AppFonts.swift */; };
+		4A2F4E84285DFD050070BAC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E83285DFD050070BAC7 /* Constants.swift */; };
+		4A2F4E87285DFDE30070BAC7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A2F4E86285DFDE30070BAC7 /* SnapKit */; };
+		4A2F4E89285DFE8C0070BAC7 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E88285DFE8C0070BAC7 /* Constraints.swift */; };
+		4A2F4E8C285E0C3F0070BAC7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F4E8B285E0C3F0070BAC7 /* Color.swift */; };
+		4AF0C05E285E1E460047E281 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */; };
+		4AF0C060285E1E710047E281 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */; };
+		4AF0C062285E1E830047E281 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */; };
+		4AF0C064285EDB710047E281 /* LogoSloganView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C063285EDB710047E281 /* LogoSloganView.swift */; };
+		4AF0C067285EDD9D0047E281 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C066285EDD9D0047E281 /* SignUpViewController.swift */; };
+		4AF0C069285EDDA90047E281 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C068285EDDA90047E281 /* SignUpAssembly.swift */; };
+		4AF0C06B285EDDB60047E281 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C06A285EDDB60047E281 /* SignUpPresenter.swift */; };
+		4AF0C06D285EDDC10047E281 /* SignUpIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C06C285EDDC10047E281 /* SignUpIteractor.swift */; };
+		4AF0C06F285EDDCA0047E281 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C06E285EDDCA0047E281 /* SignUpRouter.swift */; };
+		4AF0C071285EDDDC0047E281 /* SignUpFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C070285EDDDC0047E281 /* SignUpFirstView.swift */; };
+		4AF0C073285EF6660047E281 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C072285EF6660047E281 /* GreenButton.swift */; };
+		4AF0C075285EF81B0047E281 /* UnderLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C074285EF81B0047E281 /* UnderLineButton.swift */; };
+		4AF0C077285EFCD00047E281 /* SignUpSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C076285EFCD00047E281 /* SignUpSecondView.swift */; };
+		4AF0C079285F36AA0047E281 /* ErrorUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C078285F36AA0047E281 /* ErrorUser.swift */; };
+		4AF0C07C285F3C6A0047E281 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C07B285F3C6A0047E281 /* HomeViewController.swift */; };
+		4AF0C07E285F3C770047E281 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C07D285F3C770047E281 /* HomeAssembly.swift */; };
+		4AF0C080285F3C840047E281 /* HomePresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C07F285F3C840047E281 /* HomePresentor.swift */; };
+		4AF0C082285F3C920047E281 /* HomeIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C081285F3C920047E281 /* HomeIteractor.swift */; };
+		4AF0C084285F3C9C0047E281 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C083285F3C9C0047E281 /* HomeView.swift */; };
+		4AF0C086285F3CA50047E281 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C085285F3CA50047E281 /* HomeRouter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCryptoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2F4E4F285DD9850070BAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A2F4E51285DD9850070BAC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A2F4E58285DD9860070BAC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A2F4E5B285DD9860070BAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A2F4E5D285DD9860070BAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A2F4E63285DDAD60070BAC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A2F4E69285DDFA40070BAC7 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		4A2F4E6B285DE0C50070BAC7 /* AuthtorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthtorizationAssembly.swift; sourceTree = "<group>"; };
+		4A2F4E6D285DE2A50070BAC7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4A2F4E70285DE5700070BAC7 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		4A2F4E72285DE6530070BAC7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4A2F4E74285DEBD80070BAC7 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		4A2F4E76285DEF730070BAC7 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		4A2F4E78285DF0720070BAC7 /* AuthorizationIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationIteractor.swift; sourceTree = "<group>"; };
+		4A2F4E7A285DF84C0070BAC7 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		4A2F4E80285DFA660070BAC7 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		4A2F4E83285DFD050070BAC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4A2F4E88285DFE8C0070BAC7 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		4A2F4E8B285E0C3F0070BAC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
+		4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
+		4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		4AF0C063285EDB710047E281 /* LogoSloganView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoSloganView.swift; sourceTree = "<group>"; };
+		4AF0C066285EDD9D0047E281 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4AF0C068285EDDA90047E281 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
+		4AF0C06A285EDDB60047E281 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		4AF0C06C285EDDC10047E281 /* SignUpIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIteractor.swift; sourceTree = "<group>"; };
+		4AF0C06E285EDDCA0047E281 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		4AF0C070285EDDDC0047E281 /* SignUpFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstView.swift; sourceTree = "<group>"; };
+		4AF0C072285EF6660047E281 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
+		4AF0C074285EF81B0047E281 /* UnderLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineButton.swift; sourceTree = "<group>"; };
+		4AF0C076285EFCD00047E281 /* SignUpSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondView.swift; sourceTree = "<group>"; };
+		4AF0C078285F36AA0047E281 /* ErrorUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUser.swift; sourceTree = "<group>"; };
+		4AF0C07B285F3C6A0047E281 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4AF0C07D285F3C770047E281 /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		4AF0C07F285F3C840047E281 /* HomePresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentor.swift; sourceTree = "<group>"; };
+		4AF0C081285F3C920047E281 /* HomeIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIteractor.swift; sourceTree = "<group>"; };
+		4AF0C083285F3C9C0047E281 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4AF0C085285F3CA50047E281 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A2F4E49285DD9850070BAC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A2F4E67285DDB8F0070BAC7 /* FirebaseAuth in Frameworks */,
+				4A2F4E87285DFDE30070BAC7 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A2F4E43285DD9850070BAC7 = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E4E285DD9850070BAC7 /* MyCryptoProject */,
+				4A2F4E4D285DD9850070BAC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A2F4E4D285DD9850070BAC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A2F4E4E285DD9850070BAC7 /* MyCryptoProject */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E4F285DD9850070BAC7 /* AppDelegate.swift */,
+				4A2F4E51285DD9850070BAC7 /* SceneDelegate.swift */,
+				4A2F4E72285DE6530070BAC7 /* UserModel.swift */,
+				4A2F4E83285DFD050070BAC7 /* Constants.swift */,
+				4A2F4E88285DFE8C0070BAC7 /* Constraints.swift */,
+				4AF0C078285F36AA0047E281 /* ErrorUser.swift */,
+				4A2F4E7C285DF9B70070BAC7 /* DesignSystem */,
+				4A2F4E6F285DE30A0070BAC7 /* Services */,
+				4A2F4E68285DDF7C0070BAC7 /* Authorization */,
+				4AF0C065285EDD5F0047E281 /* SignUpFirst */,
+				4AF0C07A285F3C420047E281 /* Home */,
+				4A2F4E58285DD9860070BAC7 /* Assets.xcassets */,
+				4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */,
+				4A2F4E5D285DD9860070BAC7 /* Info.plist */,
+				4A2F4E63285DDAD60070BAC7 /* GoogleService-Info.plist */,
+			);
+			path = MyCryptoProject;
+			sourceTree = "<group>";
+		};
+		4A2F4E68285DDF7C0070BAC7 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E69285DDFA40070BAC7 /* AuthorizationViewController.swift */,
+				4A2F4E6B285DE0C50070BAC7 /* AuthtorizationAssembly.swift */,
+				4A2F4E76285DEF730070BAC7 /* AuthorizationPresenter.swift */,
+				4A2F4E78285DF0720070BAC7 /* AuthorizationIteractor.swift */,
+				4A2F4E74285DEBD80070BAC7 /* AuthorizationRouter.swift */,
+				4A2F4E70285DE5700070BAC7 /* AuthorizationView.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		4A2F4E6F285DE30A0070BAC7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E6D285DE2A50070BAC7 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A2F4E7C285DF9B70070BAC7 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E7E285DF9DC0070BAC7 /* ReusibleView */,
+				4A2F4E7D285DF9D10070BAC7 /* Font */,
+				4A2F4E8B285E0C3F0070BAC7 /* Color.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		4A2F4E7D285DF9D10070BAC7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */,
+				4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */,
+				4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */,
+				4A2F4E80285DFA660070BAC7 /* AppFonts.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4A2F4E7E285DF9DC0070BAC7 /* ReusibleView */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E7A285DF84C0070BAC7 /* TextFieldView.swift */,
+				4AF0C063285EDB710047E281 /* LogoSloganView.swift */,
+				4AF0C072285EF6660047E281 /* GreenButton.swift */,
+				4AF0C074285EF81B0047E281 /* UnderLineButton.swift */,
+			);
+			path = ReusibleView;
+			sourceTree = "<group>";
+		};
+		4AF0C065285EDD5F0047E281 /* SignUpFirst */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0C066285EDD9D0047E281 /* SignUpViewController.swift */,
+				4AF0C068285EDDA90047E281 /* SignUpAssembly.swift */,
+				4AF0C06A285EDDB60047E281 /* SignUpPresenter.swift */,
+				4AF0C06C285EDDC10047E281 /* SignUpIteractor.swift */,
+				4AF0C070285EDDDC0047E281 /* SignUpFirstView.swift */,
+				4AF0C076285EFCD00047E281 /* SignUpSecondView.swift */,
+				4AF0C06E285EDDCA0047E281 /* SignUpRouter.swift */,
+			);
+			path = SignUpFirst;
+			sourceTree = "<group>";
+		};
+		4AF0C07A285F3C420047E281 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0C07B285F3C6A0047E281 /* HomeViewController.swift */,
+				4AF0C07D285F3C770047E281 /* HomeAssembly.swift */,
+				4AF0C07F285F3C840047E281 /* HomePresentor.swift */,
+				4AF0C081285F3C920047E281 /* HomeIteractor.swift */,
+				4AF0C083285F3C9C0047E281 /* HomeView.swift */,
+				4AF0C085285F3CA50047E281 /* HomeRouter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A2F4E4B285DD9850070BAC7 /* MyCryptoProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A2F4E60285DD9860070BAC7 /* Build configuration list for PBXNativeTarget "MyCryptoProject" */;
+			buildPhases = (
+				4A2F4E48285DD9850070BAC7 /* Sources */,
+				4A2F4E49285DD9850070BAC7 /* Frameworks */,
+				4A2F4E4A285DD9850070BAC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyCryptoProject;
+			packageProductDependencies = (
+				4A2F4E66285DDB8F0070BAC7 /* FirebaseAuth */,
+				4A2F4E86285DFDE30070BAC7 /* SnapKit */,
+			);
+			productName = MyCryptoProject;
+			productReference = 4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A2F4E44285DD9850070BAC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					4A2F4E4B285DD9850070BAC7 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 4A2F4E47285DD9850070BAC7 /* Build configuration list for PBXProject "MyCryptoProject" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A2F4E43285DD9850070BAC7;
+			packageReferences = (
+				4A2F4E65285DDB8F0070BAC7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4A2F4E85285DFDE30070BAC7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 4A2F4E4D285DD9850070BAC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A2F4E4B285DD9850070BAC7 /* MyCryptoProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A2F4E4A285DD9850070BAC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A2F4E5C285DD9860070BAC7 /* LaunchScreen.storyboard in Resources */,
+				4A2F4E59285DD9860070BAC7 /* Assets.xcassets in Resources */,
+				4A2F4E64285DDAD60070BAC7 /* GoogleService-Info.plist in Resources */,
+				4AF0C05E285E1E460047E281 /* Mulish-Bold.ttf in Resources */,
+				4AF0C062285E1E830047E281 /* Montserrat-Medium.ttf in Resources */,
+				4AF0C060285E1E710047E281 /* Mulish-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A2F4E48285DD9850070BAC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF0C069285EDDA90047E281 /* SignUpAssembly.swift in Sources */,
+				4A2F4E81285DFA660070BAC7 /* AppFonts.swift in Sources */,
+				4A2F4E77285DEF730070BAC7 /* AuthorizationPresenter.swift in Sources */,
+				4A2F4E79285DF0720070BAC7 /* AuthorizationIteractor.swift in Sources */,
+				4AF0C06F285EDDCA0047E281 /* SignUpRouter.swift in Sources */,
+				4AF0C077285EFCD00047E281 /* SignUpSecondView.swift in Sources */,
+				4AF0C07E285F3C770047E281 /* HomeAssembly.swift in Sources */,
+				4A2F4E6C285DE0C50070BAC7 /* AuthtorizationAssembly.swift in Sources */,
+				4A2F4E7B285DF84C0070BAC7 /* TextFieldView.swift in Sources */,
+				4A2F4E73285DE6530070BAC7 /* UserModel.swift in Sources */,
+				4A2F4E6A285DDFA40070BAC7 /* AuthorizationViewController.swift in Sources */,
+				4AF0C06D285EDDC10047E281 /* SignUpIteractor.swift in Sources */,
+				4AF0C067285EDD9D0047E281 /* SignUpViewController.swift in Sources */,
+				4AF0C080285F3C840047E281 /* HomePresentor.swift in Sources */,
+				4AF0C06B285EDDB60047E281 /* SignUpPresenter.swift in Sources */,
+				4A2F4E84285DFD050070BAC7 /* Constants.swift in Sources */,
+				4AF0C084285F3C9C0047E281 /* HomeView.swift in Sources */,
+				4AF0C07C285F3C6A0047E281 /* HomeViewController.swift in Sources */,
+				4A2F4E8C285E0C3F0070BAC7 /* Color.swift in Sources */,
+				4A2F4E89285DFE8C0070BAC7 /* Constraints.swift in Sources */,
+				4AF0C079285F36AA0047E281 /* ErrorUser.swift in Sources */,
+				4AF0C086285F3CA50047E281 /* HomeRouter.swift in Sources */,
+				4A2F4E71285DE5700070BAC7 /* AuthorizationView.swift in Sources */,
+				4A2F4E6E285DE2A50070BAC7 /* AuthService.swift in Sources */,
+				4AF0C082285F3C920047E281 /* HomeIteractor.swift in Sources */,
+				4A2F4E50285DD9850070BAC7 /* AppDelegate.swift in Sources */,
+				4AF0C075285EF81B0047E281 /* UnderLineButton.swift in Sources */,
+				4A2F4E75285DEBD80070BAC7 /* AuthorizationRouter.swift in Sources */,
+				4A2F4E52285DD9850070BAC7 /* SceneDelegate.swift in Sources */,
+				4AF0C064285EDB710047E281 /* LogoSloganView.swift in Sources */,
+				4AF0C073285EF6660047E281 /* GreenButton.swift in Sources */,
+				4AF0C071285EDDDC0047E281 /* SignUpFirstView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A2F4E5B285DD9860070BAC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A2F4E5E285DD9860070BAC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A2F4E5F285DD9860070BAC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A2F4E61285DD9860070BAC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCryptoProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.astral.MyCryptoProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A2F4E62285DD9860070BAC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCryptoProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.astral.MyCryptoProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A2F4E47285DD9850070BAC7 /* Build configuration list for PBXProject "MyCryptoProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A2F4E5E285DD9860070BAC7 /* Debug */,
+				4A2F4E5F285DD9860070BAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A2F4E60285DD9860070BAC7 /* Build configuration list for PBXNativeTarget "MyCryptoProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A2F4E61285DD9860070BAC7 /* Debug */,
+				4A2F4E62285DD9860070BAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A2F4E65285DDB8F0070BAC7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		4A2F4E85285DFDE30070BAC7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A2F4E66285DDB8F0070BAC7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A2F4E65285DDB8F0070BAC7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4A2F4E86285DFDE30070BAC7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A2F4E85285DFDE30070BAC7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4A2F4E44285DD9850070BAC7 /* Project object */;
+}
