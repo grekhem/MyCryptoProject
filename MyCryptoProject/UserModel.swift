@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserModel {
     var name: String?
     var phone: String?
     var email: String?
     var uid: String?
+    var photo: UIImage?
+    var watchlist: [String]?
 }

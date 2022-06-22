@@ -25,7 +25,7 @@ extension AuthorizationRouter: IAuthorizationRouter {
     }
     
     func openApp() {
-        let nextVc = HomeViewController()
+        let nextVc = TabBarAssembly.buildTabBar()
         nextVc.modalTransitionStyle = .flipHorizontal
         nextVc.modalPresentationStyle = .fullScreen
         vc?.present(nextVc, animated: true, completion: nil)

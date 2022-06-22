@@ -13,6 +13,7 @@ protocol IAuthorizationPresenter: AnyObject {
     func resetPassword(email: String) -> Void
     var openResetPasswordAlert: (() -> Void)? { get set }
     var openResetSuccessAlert: (() -> Void)? { get set }
+    func openApp() -> Void
 }
 
 final class AuthorizationPresenter {
@@ -56,5 +57,9 @@ extension AuthorizationPresenter: IAuthorizationPresenter {
         self.iteractor.resetSuccess = { [weak self] in
             self?.openResetSuccessAlert?()
         }
+    }
+    
+    func openApp() {
+        self.router.openApp()
     }
 }

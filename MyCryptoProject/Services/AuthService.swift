@@ -66,4 +66,9 @@ final class AuthService {
             }
         }
     }
+    
+    func getUserUID() -> String? {
+        let uid = auth.currentUser?.uid
+        return uid
+    }
 }

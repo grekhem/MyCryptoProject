@@ -15,6 +15,10 @@ final class AuthorizationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLayoutSubviews() {
+        self.customView.backgroundColor = Color.gray.color
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.chechAuth()
     }
@@ -47,13 +51,13 @@ final class AuthorizationViewController: UIViewController {
     
     private func chechAuth() {
         if self.presenter?.checkAuth() == true {
-            let vc = HomeViewController()
-            vc.modalTransitionStyle = .flipHorizontal
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            self.presenter?.openApp()
+//            let vc = HomeViewController()
+//            vc.modalTransitionStyle = .flipHorizontal
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
         }
     }
-    
 }
 
 

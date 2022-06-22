@@ -9,13 +9,12 @@ import Foundation
 
 protocol ISignUpPresenter {
     func viewDidLoad(uiFirst: SignUpFirstView, uiSecond: SignUpSecondView)
-    func changeUiToSecond()
-    var changeUi: (() -> Void)? { get set }
+    var changeUi: ((String, String) -> Void)? { get set }
     var error: ((ErrorUser) -> Void)? { get set }
 }
 
 final class SignUpPresenter {
-    var changeUi: (() -> Void)?
+    var changeUi: ((String, String) -> Void)?
     var error: ((ErrorUser) -> Void)?
     private weak var uiFirst: SignUpFirstView?
     private weak var uiSecond: SignUpSecondView?
@@ -29,9 +28,6 @@ final class SignUpPresenter {
 }
 
 extension SignUpPresenter: ISignUpPresenter {
-    func changeUiToSecond() {
-        self.changeUi?()
-    }
     
     func viewDidLoad(uiFirst: SignUpFirstView, uiSecond: SignUpSecondView) {
         self.uiFirst = uiFirst
@@ -53,11 +49,10 @@ extension SignUpPresenter: ISignUpPresenter {
             self.error?(errorUser)
         }
         uiFirst.onTapNextButton = { name, phone in
-            self.iteractor.createUser(name: name, phone: phone)
-            self.changeUi?()
+            self.changeUi?(name, phone)
         }
-        uiSecond.onTapReadyButton = { email, password in
-            self.iteractor.registerUser(email: email, password: password)
+        uiSecond.onTapReadyButton = { email, password, name, phone in
+            self.iteractor.registerUser(email: email, password: password, name: name, phone: phone)
         }
     }
 }

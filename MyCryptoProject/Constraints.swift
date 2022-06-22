@@ -18,4 +18,14 @@ enum Constraints {
     static let forgotButtonTop: CGFloat = 36
     static let ButtonTop: CGFloat = 27
     static let enterButtonHeight: CGFloat = 38
+    static let photoAndGreetingTop: CGFloat = 16
+    static let greetingNameLeadind: CGFloat = 10
+    static let watchlistTop: CGFloat = 24
+    static let scrollViewTop: CGFloat = 12
+    static let cryptoIconVertical: CGFloat = 12
+    static let cryptoHorizontal: CGFloat = 16
+    static let cryptoNameSymbolLeading: CGFloat = 16
+    static let cryptoSymbolTop: CGFloat = 16
+    static let cryptoNameTop: CGFloat = 8
+    static let cryptoViewVertical: CGFloat = 10
 }

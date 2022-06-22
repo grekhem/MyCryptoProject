@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 enum Color {
     case green
@@ -14,6 +15,9 @@ enum Color {
     case lightGreen
     case yellow
     case blue
+    case lightGray
+    case darkGreen
+    case red
     
     var color: UIColor {
         switch self {
@@ -27,6 +31,12 @@ enum Color {
             return UIColor(red: 239/255, green: 190/255, blue: 36/255, alpha: 1)
         case .blue:
             return UIColor(red: 30/255, green: 130/255, blue: 197/255, alpha: 1)
+        case .lightGray:
+            return UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1)
+        case .darkGreen:
+            return UIColor(red: 21/255, green: 44/255, blue: 7/255, alpha: 1)
+        case .red:
+            return UIColor(red: 242/255, green: 102/255, blue: 102/255, alpha: 1)
         }
     }
 }
