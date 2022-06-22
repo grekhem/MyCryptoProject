@@ -53,7 +53,6 @@ extension SignUpPresenter: ISignUpPresenter {
             self.error?(errorUser)
         }
         uiFirst.onTapNextButton = { name, phone in
-            self.iteractor.createUser(name: name, phone: phone)
             self.changeUi?()
         }
         uiSecond.onTapReadyButton = { email, password in

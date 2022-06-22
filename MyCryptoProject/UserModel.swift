@@ -12,4 +12,5 @@ struct UserModel {
     var phone: String?
     var email: String?
     var uid: String?
+    var watchlist: [String]?
 }

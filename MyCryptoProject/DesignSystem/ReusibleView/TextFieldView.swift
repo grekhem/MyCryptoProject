@@ -22,6 +22,7 @@ final class TextFieldView: UIView {
         textfield.textColor = UIColor(red: 93/255, green: 92/255, blue: 93/255, alpha: 1)
         textfield.layer.cornerRadius = Constants.textFieldRadius
         textfield.layer.borderColor = Color.lightGreen.color.cgColor
+        textfield.backgroundColor = .white
         textfield.layer.borderWidth = 1
         textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
         textfield.leftViewMode = .always
@@ -32,8 +33,7 @@ final class TextFieldView: UIView {
         self.label.text = text
         self.textField.placeholder = placeholder
         super.init(frame: .zero)
-        self.configLabel()
-        self.configTextField()
+        self.configUi()
     }
     
     required init?(coder: NSCoder) {
@@ -51,6 +51,12 @@ final class TextFieldView: UIView {
 }
 
 private extension TextFieldView {
+    
+    func configUi() {
+        self.configLabel()
+        self.configTextField()
+    }
+    
     func configLabel() {
         self.addSubview(label)
         self.label.snp.makeConstraints { make in

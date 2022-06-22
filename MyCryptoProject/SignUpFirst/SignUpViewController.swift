@@ -22,6 +22,11 @@ final class SignUpViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLayoutSubviews() {
+        self.customViewFirst.backgroundColor = Color.gray.color
+        self.customViewSecond.backgroundColor = Color.gray.color
+    }
+    
     override func loadView() {
         self.view = self.customViewFirst
         self.presenter?.viewDidLoad(uiFirst: customViewFirst, uiSecond: customViewSecond)
