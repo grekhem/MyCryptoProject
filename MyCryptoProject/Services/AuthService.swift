@@ -67,9 +67,8 @@ final class AuthService {
         }
     }
     
-    func getUser() -> UserModel {
-        let user = auth.currentUser
-        let model = UserModel(name: user?.displayName, phone: user?.phoneNumber, email: user?.email, uid: user?.uid, watchlist: nil)
-        return model
+    func getUserUID() -> String? {
+        let uid = auth.currentUser?.uid
+        return uid
     }
 }

@@ -10,10 +10,13 @@ import SwiftUI
 
 protocol IHomeIteractor {
     var getArrayEntity: (([CryptoEntity]) -> Void)? { get set }
+    var getUserInfo: ((UserModel) -> Void)? { get set }
 }
 
 class HomeIteractor {
     var getArrayEntity: (([CryptoEntity]) -> Void)?
+    var getUserInfo: ((UserModel) -> Void)?
+    var user = UserModel()
     private var networkService: INetworkService
     private var data = [CryptoEntity]()
     private var watchlist = ["BTC", "ETH", "XRP", "BCH", "EOS", "XLM", "LTC", "ADA", "USDT", "MIOTA"]
@@ -21,6 +24,7 @@ class HomeIteractor {
     init(networkService: INetworkService) {
         self.networkService = networkService
         self.fetchData()
+        self.getUser()
     }
     
 }
@@ -40,6 +44,24 @@ extension HomeIteractor: IHomeIteractor {
 }
 
 private extension HomeIteractor {
+    
+    func getPhoto(uid: String?) {
+        guard let uid = uid else { return }
+        DatabaseService.shared.getImageFromDB(photoName: uid) { [weak self] image in
+            guard let self = self else { return }
+            self.user.photo = image
+            self.getUserInfo?(self.user)
+        }
+    }
+    
+    func getUser() {
+        guard let uid = AuthService.shared.getUserUID() else { return }
+        DatabaseService.shared.getUser(uid: uid) { [weak self] user in
+            guard let user = user, let self = self else { return }
+            self.user = user
+            self.getPhoto(uid: user.uid)
+        }
+    }
     
     func modelingData(data: CryptoDTO) {
         var count = 0

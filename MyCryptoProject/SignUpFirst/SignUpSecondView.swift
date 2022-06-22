@@ -11,11 +11,13 @@ import UIKit
 protocol ISignUpSecondView {
     var onTapSignInButton: (() -> Void)? { get set }
     var error: ((ErrorUser) -> Void)? { get set }
-    var onTapReadyButton: ((String, String) -> Void)? { get set }
+    var onTapReadyButton: ((String, String, String, String) -> Void)? { get set }
 }
 
 final class SignUpSecondView: UIView {
-    var onTapReadyButton: ((String, String) -> Void)?
+    var name = ""
+    var phone = ""
+    var onTapReadyButton: ((String, String, String, String) -> Void)?
     var error: ((ErrorUser) -> Void)?
     var onTapSignInButton: (() -> Void)?
     private var isCheck = false {
@@ -178,7 +180,7 @@ private extension SignUpSecondView {
         if let email = self.emailView.getTextFromField(), let password = self.passwordView.getTextFromField(), let confirm = self.confirmView.getTextFromField() {
             if password == confirm {
                 if isCheck == true {
-                    self.onTapReadyButton?(email, password)
+                    self.onTapReadyButton?(email, password, self.name, self.phone)
                 } else {
                     self.error?(.notCheck)
                 }

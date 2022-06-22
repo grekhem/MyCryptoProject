@@ -30,9 +30,11 @@ final class SignUpViewController: UIViewController {
     override func loadView() {
         self.view = self.customViewFirst
         self.presenter?.viewDidLoad(uiFirst: customViewFirst, uiSecond: customViewSecond)
-        self.presenter?.changeUi = { [weak self] in
+        self.presenter?.changeUi = { [weak self] name, phone in
             guard let self = self else { return }
             self.view = self.customViewSecond
+            self.customViewSecond.name = name
+            self.customViewSecond.phone = phone
         }
         self.presenter?.error = { [weak self] errorUser in
             guard let self = self else { return }

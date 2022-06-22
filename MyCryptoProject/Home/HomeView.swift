@@ -10,7 +10,11 @@ import UIKit
 
 protocol IHomeView: AnyObject {
     var watchlist: [CryptoEntity]? { get set }
+    var user: UserModel? { get set }
     func configCryptoView() -> Void
+    func updateName() -> Void
+    func updatePhoto() -> Void
+    func updateGreeting(greeting: String) -> Void
 }
 
 final class HomeView: UIView {
@@ -20,7 +24,6 @@ final class HomeView: UIView {
     let contentView = UIView()
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "photo")
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         return imageView
@@ -35,7 +38,7 @@ final class HomeView: UIView {
     }()
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Igor"
+        label.text = ""
         label.font = AppFonts.mulishBold20.font
         label.textColor = Color.darkGreen.color
         label.textAlignment = .left
@@ -75,6 +78,19 @@ final class HomeView: UIView {
 }
 
 extension HomeView: IHomeView {
+    
+    func updatePhoto() {
+        self.photoImageView.image = self.user?.photo
+    }
+    
+    
+    func updateGreeting(greeting: String) -> Void {
+        self.greetingLabel.text = greeting
+    }
+    
+    func updateName() -> Void {
+        self.nameLabel.text = self.user?.name
+    }
     
     func configCryptoView() {
         if watchlist?.isEmpty == false {
