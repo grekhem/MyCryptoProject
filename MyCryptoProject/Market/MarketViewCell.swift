@@ -8,16 +8,17 @@
 import Foundation
 import UIKit
 
-final class CryptoCurrencyView: UIView {
+final class MarketViewCell: UITableViewCell {
     
     private let name: String
     private let symbol: String
     private let price: String
     private let percent: String
     private let isRising: Bool
-    private var onTapHandler: ((String) -> Void)?
-    private lazy var onTap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+    private let view = UIView()
+    lazy var spacingView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 10))
     
+    static let id = String(describing: MarketViewCell.self)
     
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -27,6 +28,7 @@ final class CryptoCurrencyView: UIView {
             imageView.image = UIImage(named: "dollar")
         }
         imageView.layer.cornerRadius = 10
+        
         return imageView
     }()
     private lazy var symbolLabel: UILabel = {
@@ -67,17 +69,14 @@ final class CryptoCurrencyView: UIView {
         return button
     }()
     
-    
-    init(name: String, symbol: String, price: String, percent: String, isRising: Bool, onTapHandler: ((String) -> Void)?) {
+    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, name: String, symbol: String, price: String, percent: String, isRising: Bool) {
         self.name = name
         self.symbol = symbol
         self.price = price
         self.percent = percent
         self.isRising = isRising
-        super.init(frame: .zero)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.configUi()
-        self.addGestureRecognizer(onTap)
-        self.onTapHandler = onTapHandler
     }
     
     required init?(coder: NSCoder) {
@@ -87,28 +86,42 @@ final class CryptoCurrencyView: UIView {
 }
 
 
-private extension CryptoCurrencyView {
+private extension MarketViewCell {
     func configUi() {
-        self.backgroundColor = .white
-        self.layer.cornerRadius = Constants.cryptoViewRadius
+    
+        self.spacingView.backgroundColor = .green
+        configView()
         configIcon()
         configSymbol()
         configName()
         configPrice()
         configPercent()
+        configSpacing()
+    }
+    
+    func configView() {
+        self.addSubview(view)
+        self.backgroundColor = Color.gray.color
+        self.view.layer.cornerRadius = Constants.cryptoViewRadius
+        self.view.backgroundColor = UIColor.white
+        self.view.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+        }
     }
     
     func configIcon() {
-        self.addSubview(iconImageView)
+        self.view.addSubview(iconImageView)
         self.iconImageView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(Constraints.cryptoIconVertical)
+            make.top.equalToSuperview().offset(Constraints.cryptoIconVertical)
+            make.bottom.equalToSuperview().inset(Constraints.cryptoIconVertical)
             make.leading.equalToSuperview().offset(Constraints.cryptoHorizontal)
             make.height.width.equalTo(64)
         }
     }
     
     func configSymbol() {
-        self.addSubview(symbolLabel)
+        self.view.addSubview(symbolLabel)
         self.symbolLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(Constraints.cryptoNameSymbolLeading)
             make.top.equalToSuperview().offset(Constraints.cryptoSymbolTop)
@@ -116,7 +129,7 @@ private extension CryptoCurrencyView {
     }
     
     func configName() {
-        self.addSubview(nameLabel)
+        self.view.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(Constraints.cryptoNameSymbolLeading)
             make.top.equalTo(symbolLabel.snp.bottom).offset(Constraints.cryptoNameTop)
@@ -124,7 +137,7 @@ private extension CryptoCurrencyView {
     }
     
     func configPrice() {
-        self.addSubview(priceLabel)
+        self.view.addSubview(priceLabel)
         self.priceLabel.snp.makeConstraints { make in
             make.centerY.equalTo(symbolLabel.snp.centerY)
             make.trailing.equalToSuperview().offset(-Constraints.cryptoHorizontal)
@@ -132,7 +145,7 @@ private extension CryptoCurrencyView {
     }
     
     func configPercent() {
-        self.addSubview(percentLabel)
+        self.view.addSubview(percentLabel)
         self.percentLabel.snp.makeConstraints { make in
             make.height.equalTo(22)
             make.width.equalTo(55)
@@ -141,7 +154,13 @@ private extension CryptoCurrencyView {
         }
     }
     
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        self.onTapHandler?(self.symbol)
+    func configSpacing() {
+        self.addSubview(spacingView)
+        self.spacingView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(10)
+        }
+        
     }
 }

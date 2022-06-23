@@ -20,10 +20,16 @@ final class MarketViewController: UIViewController {
     override func loadView() {
         self.view = self.customView
         self.presenter?.viewDidLoad(ui: customView)
+        self.presenter?.alert = { [weak self] alert in
+            guard let self = self else { return }
+            let alert = UIAlertController(title: "Add to watchlist", message: alert, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func viewWillLayoutSubviews() {
-        self.customView.backgroundColor = .blue
+        self.customView.backgroundColor = Color.gray.color
     }
     
     init(presenter: IMarketPresenter) {

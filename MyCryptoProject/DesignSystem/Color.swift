@@ -18,6 +18,7 @@ enum Color {
     case lightGray
     case darkGreen
     case red
+    case darkGrey
     
     var color: UIColor {
         switch self {
@@ -37,6 +38,8 @@ enum Color {
             return UIColor(red: 21/255, green: 44/255, blue: 7/255, alpha: 1)
         case .red:
             return UIColor(red: 242/255, green: 102/255, blue: 102/255, alpha: 1)
+        case .darkGrey:
+            return UIColor(red: 93/255, green: 92/255, blue: 93/255, alpha: 1)
         }
     }
 }

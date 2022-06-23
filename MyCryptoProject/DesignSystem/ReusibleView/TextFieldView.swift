@@ -41,6 +41,10 @@ final class TextFieldView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func removeText() {
+        self.textField.text = ""
+    }
+    
     func getTextFromField() -> String? {
         if textField.text != "" {
             return textField.text

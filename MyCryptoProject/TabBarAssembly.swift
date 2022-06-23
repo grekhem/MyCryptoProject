@@ -13,12 +13,13 @@ enum TabBarAssembly {
         let tabBar = UITabBarController()
         let networkService = NetworkService()
         let homeController = HomeAssembly.buildModule(networkService: networkService)
-        let marketController = MarketAssembly.buildModule()
-        let profileController = ProfileAssembly.buildModule()
+        let marketController = MarketAssembly.buildModule(networkService: networkService)
+        let profileController = ProfileAssembly.buildModule(tabbar: tabBar)
         
         
         tabBar.setViewControllers([homeController, marketController, profileController], animated: true)
         tabBar.tabBar.tintColor = Color.green.color
+        tabBar.tabBar.backgroundColor = UIColor.white
         tabBar.tabBar.unselectedItemTintColor = Color.lightGray.color
         
         let homeControllerBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 1)

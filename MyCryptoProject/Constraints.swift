@@ -28,4 +28,5 @@ enum Constraints {
     static let cryptoSymbolTop: CGFloat = 16
     static let cryptoNameTop: CGFloat = 8
     static let cryptoViewVertical: CGFloat = 10
+    static let marketTextFieldTop: CGFloat = 16
 }

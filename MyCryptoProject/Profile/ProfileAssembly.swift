@@ -8,12 +8,13 @@
 import UIKit
 
 enum ProfileAssembly {
-    static func buildModule() -> UIViewController {
+    static func buildModule(tabbar: UITabBarController) -> UIViewController {
         let router = ProfileRouter()
         let iteractor = ProfileIteractor()
         let presenter = ProfilePresenter(router: router, iteractor: iteractor)
         let controller = ProfileViewController(presenter: presenter)
         router.vc = controller
+        router.tabbar = tabbar
         return controller
     }
 }

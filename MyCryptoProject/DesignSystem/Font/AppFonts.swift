@@ -15,8 +15,12 @@ enum AppFonts {
     case mulishBold20
     case mulishBold16
     case mulishBold10
+    case mulishSemiBold16
+    case mulishBold24
     case mulishSemiBold12
     case mulishRegular16
+    case mulishRegular14
+    case mulishRegular12
     
     var font: UIFont? {
         switch self {
@@ -36,6 +40,14 @@ enum AppFonts {
             return UIFont(name: "Mulish-Bold", size: 16)
         case .mulishBold10:
             return UIFont(name: "Mulish-Bold", size: 10)
+        case .mulishRegular14:
+            return UIFont(name: "Mulish-Regular", size: 14)
+        case .mulishBold24:
+            return UIFont(name: "Mulish-Bold", size: 24)
+        case .mulishRegular12:
+            return UIFont(name: "Mulish-Regular", size: 12)
+        case .mulishSemiBold16:
+            return UIFont(name: "Mulish-SemiBold", size: 16)
         }
     }
 }
