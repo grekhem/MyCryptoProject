@@ -30,6 +30,34 @@ final class DatabaseService {
         
     }
     
+    func uploadImage(photoName: String, photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void){
+        let storage = Storage.storage()
+        let reference = storage.reference()
+        let pathRef = reference.child("photo").child(photoName)
+        guard let imageData = photo.jpegData(compressionQuality: 0.4) else { return }
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        pathRef.putData(imageData, metadata: metadata) { metadata, error in
+            pathRef.downloadURL { url, error in
+                guard let url = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                completion(.success(url))
+            }
+        }
+    }
+    
+    func removeWatchlist(crypto: String) {
+        let db = self.configFireBase()
+        db.collection(self.collection).document(Auth.auth().currentUser?.uid ?? "").updateData(["watchlist" : FieldValue.arrayRemove([crypto])])
+    }
+    
+    func addWatchlist(crypto: String) {
+        let db = self.configFireBase()
+        db.collection(self.collection).document(Auth.auth().currentUser?.uid ?? "").updateData(["watchlist" : FieldValue.arrayUnion([crypto])])
+    }
+    
     func createUser(user: UserModel) {
         guard let uid = user.uid else { return }
         let db = self.configFireBase()
@@ -64,20 +92,22 @@ final class DatabaseService {
         }
     }
     
-    func getImageFromDB(photoName: String, comlition: @escaping ((UIImage?) -> Void)) {
+    func getImageFromDB(photoName: String, comlition: @escaping ((UIImage) -> Void)) {
         let storage = Storage.storage()
         let reference = storage.reference()
         let pathRef = reference.child("photo")
-        var image: UIImage? = UIImage(named: "person")
-        let fileRef = pathRef.child(photoName + ".jpg")
+        var imageDefault: UIImage? = UIImage(named: "person")
+        let fileRef = pathRef.child(photoName)
         fileRef.getData(maxSize: 1300*1300) { data, error in
-            print("data - \(data)")
-            guard error == nil else { comlition(image); print(error); return }
-            if let data = data {
-                image = UIImage(data: data)
-                comlition(image)
-            } else {
-                comlition(image)
+            if let image = imageDefault {
+                guard error == nil else { comlition(image); return }
+                guard let data = data else { comlition(image); return }
+                if let imageData = UIImage(data: data) {
+                    imageDefault = imageData
+                    comlition(imageData)
+                } else {
+                    comlition(image)
+                }
             }
         }
     }

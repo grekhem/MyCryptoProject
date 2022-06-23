@@ -15,9 +15,14 @@ protocol IHomeView: AnyObject {
     func updateName() -> Void
     func updatePhoto() -> Void
     func updateGreeting(greeting: String) -> Void
+    var addAlert: ((String) -> Void)? { get set }
+    var updateData: (() -> Void)? { get set }
+    
 }
 
 final class HomeView: UIView {
+    var updateData: (() -> Void)?
+    var addAlert: ((String) -> Void)?
     var watchlist: [CryptoEntity]?
     var user: UserModel?
     let scrollView = UIScrollView()
@@ -44,9 +49,10 @@ final class HomeView: UIView {
         label.textAlignment = .left
         return label
     }()
-    let notificationButton: UIButton = {
+    let updateButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "bell"), for: .normal)
+        button.setImage(UIImage(named: "reload"), for: .normal)
+        button.tintColor = .green
         return button
     }()
     let watchlistLabel: UILabel = {
@@ -93,9 +99,16 @@ extension HomeView: IHomeView {
     }
     
     func configCryptoView() {
+        let array = self.stackView.arrangedSubviews
+        for i in array {
+            i.removeFromSuperview()
+        }
         if watchlist?.isEmpty == false {
             for i in watchlist! {
-                let view = CryptoCurrencyView(name: i.name, symbol: i.symbol, price: i.price, percent: i.changePercent, isRising: i.isRising)
+                let view = CryptoCurrencyView(name: i.name, symbol: i.symbol, price: i.price, percent: i.changePercent, isRising: i.isRising) { [weak self] symbol in
+                    guard let self = self else { return }
+                    self.addAlert?(symbol)
+                }
                 self.stackView.addArrangedSubview(view)
             }
         }
@@ -111,7 +124,7 @@ private extension HomeView {
         configPhotoView()
         configGreeting()
         configName()
-        configNotificationButton()
+        configUpdateButton()
         configWatchlistLabel()
         configStackView()
     }
@@ -156,11 +169,13 @@ private extension HomeView {
         }
     }
     
-    func configNotificationButton() {
-        self.contentView.addSubview(notificationButton)
-        self.notificationButton.snp.makeConstraints { make in
+    func configUpdateButton() {
+        self.updateButton.addTarget(self, action: #selector(pressedUpdateButton), for: .touchUpInside)
+        self.contentView.addSubview(updateButton)
+        self.updateButton.snp.makeConstraints { make in
             make.centerY.equalTo(photoImageView.snp.centerY).priority(.low)
             make.trailing.equalToSuperview().offset(-Constraints.InsetHorizontal).priority(.high)
+            make.height.width.equalTo(24)
         }
     }
     
@@ -179,5 +194,20 @@ private extension HomeView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
             make.bottom.equalToSuperview()
         }
+    }
+    
+    @objc func pressedUpdateButton() {
+        self.updateData?()
+        self.updateButton.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.5),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+            self.updateButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        },
+                       completion: nil
+        )
     }
 }

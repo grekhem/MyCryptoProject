@@ -9,9 +9,13 @@ import Foundation
 
 protocol IHomePresenter {
     func viewDidLoad(ui: IHomeView)
+    func updateData()
+    func removeFromWatchlist(crypto: String)
+    var alert: ((String) -> Void)? { get set }
 }
 
 final class HomePresenter {
+    var alert: ((String) -> Void)?
     private weak var ui: IHomeView?
     private var router: IHomeRouter
     private var iteractor: IHomeIteractor
@@ -37,6 +41,15 @@ final class HomePresenter {
 }
 
 extension HomePresenter: IHomePresenter {
+    
+    func removeFromWatchlist(crypto: String) {
+        self.iteractor.removeFromWatchlist(crypto: crypto)
+    }
+    
+    func updateData() {
+        self.iteractor.update()
+    }
+    
     func viewDidLoad(ui: IHomeView) {
         self.ui = ui
         ui.updateGreeting(greeting: self.greeting())
@@ -49,6 +62,14 @@ extension HomePresenter: IHomePresenter {
             self.ui?.user = user
             self.ui?.updatePhoto()
             self.ui?.updateName()
+        }
+        ui.addAlert = { [weak self] alert in
+            guard let self = self else { return }
+            self.alert?(alert)
+        }
+        ui.updateData = { [weak self] in
+            guard let self = self else { return }
+            self.updateData()
         }
     }
 }

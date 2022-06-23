@@ -51,6 +51,8 @@
 		4ABC47DE2862C91E00A1DDE0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC47DD2862C91E00A1DDE0 /* FirebaseFirestore */; };
 		4ABC47E02862C91E00A1DDE0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC47DF2862C91E00A1DDE0 /* FirebaseFirestoreSwift */; };
 		4ABC47E22862C91E00A1DDE0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC47E12862C91E00A1DDE0 /* FirebaseStorage */; };
+		4ABC47E4286321E600A1DDE0 /* MarketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */; };
+		4ABC47E62864983D00A1DDE0 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */; };
 		4AF0C05E285E1E460047E281 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */; };
 		4AF0C060285E1E710047E281 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */; };
 		4AF0C062285E1E830047E281 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */; };
@@ -113,6 +115,8 @@
 		4ABC47D028620A4E00A1DDE0 /* CryptoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDTO.swift; sourceTree = "<group>"; };
 		4ABC47D2286215E900A1DDE0 /* CryptoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEntity.swift; sourceTree = "<group>"; };
 		4ABC47D42862C4B800A1DDE0 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewCell.swift; sourceTree = "<group>"; };
+		4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
 		4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
 		4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
 		4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				4AF0C072285EF6660047E281 /* GreenButton.swift */,
 				4AF0C074285EF81B0047E281 /* UnderLineButton.swift */,
 				4ABC47C72861B10C00A1DDE0 /* CryptoCurrencyView.swift */,
+				4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */,
 			);
 			path = ReusibleView;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				4ABC47B328619D4800A1DDE0 /* MarketPresenter.swift */,
 				4ABC47B528619D5A00A1DDE0 /* MarketIteractor.swift */,
 				4ABC47B728619D6500A1DDE0 /* MarketView.swift */,
+				4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */,
 				4ABC47B928619D7000A1DDE0 /* MarketRouter.swift */,
 			);
 			path = Market;
@@ -394,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ABC47E4286321E600A1DDE0 /* MarketViewCell.swift in Sources */,
 				4ABC47B428619D4800A1DDE0 /* MarketPresenter.swift in Sources */,
 				4AF0C069285EDDA90047E281 /* SignUpAssembly.swift in Sources */,
 				4ABC47C82861B10C00A1DDE0 /* CryptoCurrencyView.swift in Sources */,
@@ -432,6 +439,7 @@
 				4A2F4E71285DE5700070BAC7 /* AuthorizationView.swift in Sources */,
 				4ABC47D128620A4E00A1DDE0 /* CryptoDTO.swift in Sources */,
 				4A2F4E6E285DE2A50070BAC7 /* AuthService.swift in Sources */,
+				4ABC47E62864983D00A1DDE0 /* SettingButtonView.swift in Sources */,
 				4ABC47AC285F847400A1DDE0 /* TabBarAssembly.swift in Sources */,
 				4AF0C082285F3C920047E281 /* HomeIteractor.swift in Sources */,
 				4A2F4E50285DD9850070BAC7 /* AppDelegate.swift in Sources */,

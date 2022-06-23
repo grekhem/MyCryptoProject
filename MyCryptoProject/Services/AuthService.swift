@@ -71,4 +71,12 @@ final class AuthService {
         let uid = auth.currentUser?.uid
         return uid
     }
+    
+    func changeEmail(email: String) {
+        auth.currentUser?.updateEmail(to: email) { error in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
 }

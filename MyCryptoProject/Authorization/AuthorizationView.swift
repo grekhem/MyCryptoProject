@@ -111,6 +111,8 @@ private extension AuthorizationView {
     
     @objc func pressedEnterButton() {
         if let email = self.emailView.getTextFromField(), let password = self.passwordView.getTextFromField() {
+            self.emailView.removeText()
+            self.passwordView.removeText()
             self.chechAuth?(email, password)
         }
     }
