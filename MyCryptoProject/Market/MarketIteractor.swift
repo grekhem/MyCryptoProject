@@ -11,14 +11,13 @@ protocol IMarketIteractor {
     var getArrayEntity: (([CryptoEntity]) -> Void)? { get set }
     var getWatchlist: (([String]) -> Void)? { get set }
     func addWatchlist(crypto: String) -> Void
-    
 }
 
 class MarketIteractor {
-    private var networkService: INetworkService
-    private var cryptoArray: [CryptoEntity] = []
     var getArrayEntity: (([CryptoEntity]) -> Void)?
     var getWatchlist: (([String]) -> Void)?
+    private var networkService: INetworkService
+    private var cryptoArray: [CryptoEntity] = []
     
     init(networkService: INetworkService) {
         self.networkService = networkService
@@ -28,16 +27,12 @@ class MarketIteractor {
 }
 
 extension MarketIteractor: IMarketIteractor {
-    
-    
-    
     func addWatchlist(crypto: String) -> Void {
         DatabaseService.shared.addWatchlist(crypto: crypto)
     }
 }
 
 private extension MarketIteractor {
-    
     func fetchWatchlist() {
         guard let uid = AuthService.shared.getUserUID() else { return }
         DatabaseService.shared.getUser(uid: uid) { [weak self] user in
@@ -45,7 +40,6 @@ private extension MarketIteractor {
             self.getWatchlist?(user.watchlist ?? [])
         }
     }
-    
     func fetchData() {
         self.networkService.loadData { (result: Result<CryptoDTO, Error>) in
             switch result {
@@ -60,7 +54,6 @@ private extension MarketIteractor {
             }
         }
     }
-    
     func modelingData(data: CryptoDTO) {
         var count = 0
         for i in 0..<data.data.count {

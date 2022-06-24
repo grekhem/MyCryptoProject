@@ -8,17 +8,16 @@
 import UIKit
 
 protocol IProfilePresenter {
-    func viewDidLoad(ui: IProfileView)
-    func openGallery()
-    func openCamera()
-    func changePassword()
-    func changeEmail(email: String)
     var privasyAlert: (() -> Void)? { get set }
     var alert: (() -> Void)? { get set }
     var libraryAlert: (() -> Void)? { get set }
     var pickerAlert: ((String) -> Void)? { get set }
     var openPicker: ((UIImagePickerController) -> Void)? { get set }
-    
+    func viewDidLoad(ui: IProfileView)
+    func openGallery()
+    func openCamera()
+    func changePassword()
+    func changeEmail(email: String)
 }
 
 final class ProfilePresenter: NSObject {
@@ -45,7 +44,6 @@ final class ProfilePresenter: NSObject {
         return imagePicker
     }()
     
-    
     init(router: IProfileRouter, iteractor: IProfileIteractor) {
         self.router = router
         self.iteractor = iteractor
@@ -53,28 +51,21 @@ final class ProfilePresenter: NSObject {
 }
 
 extension ProfilePresenter: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
         self.ui?.changePhoto(photo: selectedImage)
         self.iteractor.uploadPhoto(photo: selectedImage)
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
-
 }
 
 extension ProfilePresenter: IProfilePresenter {
-    
     func changePassword() {
         self.iteractor.changePassword()
     }
-    
     func changeEmail(email: String) {
         self.iteractor.changeEmail(email: email)
     }
-    
     func openGallery() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
             self.openPicker?(self.libraryImagePicker)
@@ -82,7 +73,6 @@ extension ProfilePresenter: IProfilePresenter {
             self.pickerAlert?("You don't have permission to access gallery.")
         }
     }
-    
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             self.openPicker?(self.cameraImagePicker)
@@ -90,7 +80,6 @@ extension ProfilePresenter: IProfilePresenter {
             self.pickerAlert?("You don't have camera")
         }
     }
-    
     func viewDidLoad(ui: IProfileView) {
         self.ui = ui
         ui.addAlert = { [weak self] in

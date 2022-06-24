@@ -32,16 +32,24 @@ final class SignUpViewController: UIViewController {
         self.presenter?.viewDidLoad(uiFirst: customViewFirst, uiSecond: customViewSecond)
         self.presenter?.changeUi = { [weak self] name, phone in
             guard let self = self else { return }
-            self.view = self.customViewSecond
-            self.customViewSecond.name = name
-            self.customViewSecond.phone = phone
+            self.changeUI(name: name, phone: phone)
         }
         self.presenter?.error = { [weak self] errorUser in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Ошибка", message: errorUser.text, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.openAlert(error: errorUser)
         }
     }
 }
 
+private extension SignUpViewController {
+    func changeUI(name: String, phone: String) {
+        self.view = self.customViewSecond
+        self.customViewSecond.name = name
+        self.customViewSecond.phone = phone
+    }
+    func openAlert(error: ErrorUser){
+        let alert = UIAlertController(title: "Error", message: error.text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}

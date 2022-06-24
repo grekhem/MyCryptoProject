@@ -20,7 +20,6 @@ extension SignUpRouter: ISignUpRouter {
     func openAuthView() {
         vc?.dismiss(animated: true, completion: nil)
     }
-    
     func registrationEnd() {
         vc?.dismiss(animated: true, completion: nil)
     }

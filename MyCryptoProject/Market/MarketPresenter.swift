@@ -8,18 +8,16 @@
 import Foundation
 
 protocol IMarketPresenter {
-    func viewDidLoad(ui: IMarketView)
     var alert: ((String) -> Void)? { get set }
+    func viewDidLoad(ui: IMarketView)
 }
 
 final class MarketPresenter {
     var alert: ((String) -> Void)?
     private weak var ui: IMarketView?
-    private var router: IMarketRouter
     private var iteractor: IMarketIteractor
     
-    init(router: IMarketRouter, iteractor: IMarketIteractor) {
-        self.router = router
+    init(iteractor: IMarketIteractor) {
         self.iteractor = iteractor
     }
 }

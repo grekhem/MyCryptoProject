@@ -67,11 +67,9 @@ final class ProfileView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 private extension ProfileView {
-    
     func configUI() {
         configPhotoView()
         configImageView()
@@ -81,7 +79,6 @@ private extension ProfileView {
         configPrivasy()
         configLogOut()
     }
-    
     func configPhotoView() {
         self.photoView.addGestureRecognizer(onEditPhoto)
         self.addSubview(photoView)
@@ -91,14 +88,12 @@ private extension ProfileView {
             make.height.width.equalTo(80)
         }
     }
-    
     func configImageView() {
         self.photoView.addSubview(imageView)
         self.imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
-    
     func configEditView() {
         self.photoView.addSubview(editImageView)
         self.editImageView.snp.makeConstraints { make in
@@ -107,7 +102,6 @@ private extension ProfileView {
             make.bottom.equalToSuperview()
         }
     }
-    
     func configNameLabel() {
         self.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
@@ -115,7 +109,6 @@ private extension ProfileView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configArrangementLabel() {
         self.addSubview(arrangementLabel)
         self.arrangementLabel.snp.makeConstraints { make in
@@ -123,7 +116,6 @@ private extension ProfileView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configPrivasy() {
         self.addSubview(privasyView)
         self.privasyView.snp.makeConstraints { make in
@@ -131,7 +123,6 @@ private extension ProfileView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configLogOut() {
         self.addSubview(logOutView)
         self.logOutView.snp.makeConstraints { make in
@@ -139,7 +130,6 @@ private extension ProfileView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     @objc func editPhoto(_ sender: UITapGestureRecognizer? = nil) {
         self.addAlert?()
     }
@@ -149,7 +139,6 @@ extension ProfileView: IProfileView {
     func changePhoto(photo: UIImage) {
         self.imageView.image = photo
     }
-    
     func setName(name: String) {
         self.nameLabel.text = name
     }

@@ -30,6 +30,7 @@ final class AuthorizationView: UIView {
     }()
     private let enterButton = GreenButton(text: "ENTER")
     private let registerButton = UnderLineButton(text: "Don't have an account yet? Register here", length: 40, locationLine: 27, lengthLine: 13)
+    
     init() {
         super.init(frame: .zero)
         self.configUI()
@@ -40,9 +41,7 @@ final class AuthorizationView: UIView {
     }
 }
 
-extension AuthorizationView: IAuthorizationView {
-    
-}
+extension AuthorizationView: IAuthorizationView {}
 
 private extension AuthorizationView {
     func configUI() {
@@ -54,7 +53,6 @@ private extension AuthorizationView {
         self.configEnterButton()
         self.configRegisterButton()
     }
-    
     func configLogo() {
         self.addSubview(logoView)
         self.logoView.snp.makeConstraints { make in
@@ -62,7 +60,6 @@ private extension AuthorizationView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configEmail() {
         self.addSubview(emailView)
         self.emailView.snp.makeConstraints { make in
@@ -70,7 +67,6 @@ private extension AuthorizationView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configPassword() {
         self.addSubview(passwordView)
         self.passwordView.snp.makeConstraints { make in
@@ -104,11 +100,9 @@ private extension AuthorizationView {
             make.bottom.equalToSuperview().priority(.low)
         }
     }
-    
     @objc func pressedRegisterButton() {
         self.onTapRegisterButton?()
     }
-    
     @objc func pressedEnterButton() {
         if let email = self.emailView.getTextFromField(), let password = self.passwordView.getTextFromField() {
             self.emailView.removeText()
@@ -116,7 +110,6 @@ private extension AuthorizationView {
             self.chechAuth?(email, password)
         }
     }
-    
     @objc func pressedForgotButton() {
         self.onTapForgotButton?()
     }

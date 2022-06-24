@@ -9,11 +9,11 @@ import Foundation
 import FirebaseAuth
 
 protocol IAuthorizationIteractor: AnyObject {
+    var openApp: (() -> Void)? { get set }
+    var resetSuccess: (() -> Void)? { get set }
     func chechAuth() -> Bool
     func checkUser(email: String, password: String)
     func resetPassword(email: String)
-    var openApp: (() -> Void)? { get set }
-    var resetSuccess: (() -> Void)? { get set }
 }
 
 final class AuthorizationIteractor {
@@ -22,7 +22,6 @@ final class AuthorizationIteractor {
 }
 
 extension AuthorizationIteractor: IAuthorizationIteractor {
-    
     func resetPassword(email: String) {
         AuthService.shared.resetPassword(email: email) { error in
             if let error = error {
@@ -32,7 +31,6 @@ extension AuthorizationIteractor: IAuthorizationIteractor {
             }
         }
     }
-    
     func checkUser(email: String, password: String) {
         AuthService.shared.signIn(email: email, password: password) { (result: Result<User, Error>) in
             switch result {
@@ -47,8 +45,6 @@ extension AuthorizationIteractor: IAuthorizationIteractor {
             }
         }
     }
-    
-    
     func chechAuth() -> Bool {
         if let auth = AuthService.shared.isSignIn {
             return auth

@@ -17,8 +17,6 @@ final class CryptoCurrencyView: UIView {
     private let isRising: Bool
     private var onTapHandler: ((String) -> Void)?
     private lazy var onTap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-    
-    
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         if let image = UIImage(named: self.symbol.lowercased()) {
@@ -67,7 +65,6 @@ final class CryptoCurrencyView: UIView {
         return button
     }()
     
-    
     init(name: String, symbol: String, price: String, percent: String, isRising: Bool, onTapHandler: ((String) -> Void)?) {
         self.name = name
         self.symbol = symbol
@@ -83,9 +80,7 @@ final class CryptoCurrencyView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
 
 private extension CryptoCurrencyView {
     func configUi() {
@@ -97,7 +92,6 @@ private extension CryptoCurrencyView {
         configPrice()
         configPercent()
     }
-    
     func configIcon() {
         self.addSubview(iconImageView)
         self.iconImageView.snp.makeConstraints { make in
@@ -106,7 +100,6 @@ private extension CryptoCurrencyView {
             make.height.width.equalTo(64)
         }
     }
-    
     func configSymbol() {
         self.addSubview(symbolLabel)
         self.symbolLabel.snp.makeConstraints { make in
@@ -114,7 +107,6 @@ private extension CryptoCurrencyView {
             make.top.equalToSuperview().offset(Constraints.cryptoSymbolTop)
         }
     }
-    
     func configName() {
         self.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
@@ -122,7 +114,6 @@ private extension CryptoCurrencyView {
             make.top.equalTo(symbolLabel.snp.bottom).offset(Constraints.cryptoNameTop)
         }
     }
-    
     func configPrice() {
         self.addSubview(priceLabel)
         self.priceLabel.snp.makeConstraints { make in
@@ -130,7 +121,6 @@ private extension CryptoCurrencyView {
             make.trailing.equalToSuperview().offset(-Constraints.cryptoHorizontal)
         }
     }
-    
     func configPercent() {
         self.addSubview(percentLabel)
         self.percentLabel.snp.makeConstraints { make in
@@ -140,7 +130,6 @@ private extension CryptoCurrencyView {
             make.trailing.equalToSuperview().offset(-Constraints.cryptoHorizontal)
         }
     }
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         self.onTapHandler?(self.symbol)
     }

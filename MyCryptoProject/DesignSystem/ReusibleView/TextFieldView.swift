@@ -44,14 +44,12 @@ final class TextFieldView: UIView {
     func removeText() {
         self.textField.text = ""
     }
-    
     func getTextFromField() -> String? {
         if textField.text != "" {
             return textField.text
         } else {
             return nil
         }
-        
     }
 }
 
@@ -61,7 +59,6 @@ private extension TextFieldView {
         self.configLabel()
         self.configTextField()
     }
-    
     func configLabel() {
         self.addSubview(label)
         self.label.snp.makeConstraints { make in

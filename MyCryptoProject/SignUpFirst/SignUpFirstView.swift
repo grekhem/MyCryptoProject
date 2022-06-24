@@ -32,9 +32,7 @@ final class SignUpFirstView: UIView {
     }
 }
 
-extension SignUpFirstView: ISignUpFirstView {
-    
-}
+extension SignUpFirstView: ISignUpFirstView {}
 
 private extension SignUpFirstView {
     func configUI() {
@@ -45,7 +43,6 @@ private extension SignUpFirstView {
         self.configNextButton()
         self.configSignInButton()
     }
-    
     func configLogo() {
         self.addSubview(logoView)
         self.logoView.snp.makeConstraints { make in
@@ -53,7 +50,6 @@ private extension SignUpFirstView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configNameView() {
         self.addSubview(nameView)
         self.nameView.snp.makeConstraints { make in
@@ -61,7 +57,6 @@ private extension SignUpFirstView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configPhoneView() {
         self.addSubview(phoneView)
         self.phoneView.snp.makeConstraints { make in
@@ -69,7 +64,6 @@ private extension SignUpFirstView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configNextButton() {
         self.nextButton.addTarget(self, action: #selector(pressedNextButton), for: .touchUpInside)
         self.addSubview(nextButton)
@@ -79,7 +73,6 @@ private extension SignUpFirstView {
             make.height.equalTo(Constraints.enterButtonHeight)
         }
     }
-    
     func configSignInButton() {
         self.signInButton.addTarget(self, action: #selector(pressedSignInButton), for: .touchUpInside)
         self.addSubview(signInButton)
@@ -89,11 +82,9 @@ private extension SignUpFirstView {
             make.bottom.equalToSuperview().priority(.low)
         }
     }
-    
     @objc func pressedSignInButton() {
         onTapSignInButton?()
     }
-    
     @objc func pressedNextButton() {
         if let name = self.nameView.getTextFromField(), let phone = self.phoneView.getTextFromField() {
             onTapNextButton?(name, phone)

@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 protocol IMarketView: AnyObject {
-    func setData(crypto: [CryptoEntity])
     var addWatchlist: ((String) -> Void)? { get set }
     var watchlist: [String] { get set }
     var addAlert: ((String) -> Void)? { get set }
+    func setData(crypto: [CryptoEntity])
 }
 
 final class MarketView: UIView {
@@ -54,11 +54,9 @@ final class MarketView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension MarketView: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchTextField.resignFirstResponder()
         if textField.text! == "" {
@@ -77,13 +75,11 @@ extension MarketView: UITextFieldDelegate {
 }
 
 private extension MarketView {
-    
     func configUI() {
         self.configTextField()
         self.setupTable()
         self.configureTable()
     }
-    
     func configTextField() {
         self.addSubview(searchTextField)
         self.searchTextField.snp.makeConstraints { make in
@@ -92,7 +88,6 @@ private extension MarketView {
             make.height.equalTo(40)
         }
     }
-    
     func setupTable() {
         self.addSubview(self.tableView)
         self.tableView.backgroundColor = .clear
@@ -102,7 +97,6 @@ private extension MarketView {
             make.bottom.equalToSuperview()
         }
     }
-    
     func configureTable() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -112,11 +106,9 @@ private extension MarketView {
 }
 
 extension MarketView: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.cryptoArrayFiltred.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = MarketViewCell(style: .default,
                                   reuseIdentifier: MarketViewCell.id,
@@ -128,10 +120,9 @@ extension MarketView: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
-                                        title: "Favourite") { [weak self] (action, view, completionHandler) in
+                                        title: "Add to watchlist") { [weak self] (action, view, completionHandler) in
             guard let self = self else { return }
             if self.watchlist.contains(self.cryptoArrayFiltred[indexPath.row].symbol) != true {
                 self.addWatchlist?(self.cryptoArrayFiltred[indexPath.row].symbol)
@@ -148,7 +139,6 @@ extension MarketView: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MarketView: IMarketView {
-    
     func setData(crypto: [CryptoEntity]) {
         self.cryptoArray = crypto
         self.cryptoArrayFiltred = crypto

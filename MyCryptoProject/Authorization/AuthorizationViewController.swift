@@ -28,36 +28,41 @@ final class AuthorizationViewController: UIViewController {
         self.presenter?.viewDidLoad(ui: customView)
         self.presenter?.openResetPasswordAlert = { [weak self] in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Сброс пароля", message: "Введите email", preferredStyle: .alert)
-            alert.addTextField { textField in
-                textField.placeholder = "email"
-            }
-            let resetButton = UIAlertAction(title: "Reset", style: .default) { _ in
-                if let text = alert.textFields?.first?.text, !text.isEmpty {
-                    self.presenter?.resetPassword(email: text)
-                }
-            }
-            alert.addAction(resetButton)
-            alert.addAction(UIAlertAction(title: "Отмена", style: .destructive, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertResetPassword()
         }
         self.presenter?.openResetSuccessAlert = { [weak self] in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "", message: "Пароль успешно сброшен\nПроверьте почту", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.passwordResetSuccess()
         }
     }
     
+    
+}
+
+private extension AuthorizationViewController {
+    func passwordResetSuccess() {
+        let alert = UIAlertController(title: "", message: "Пароль успешно сброшен\nПроверьте почту", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func alertResetPassword() {
+        let alert = UIAlertController(title: "Сброс пароля", message: "Введите email", preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "email"
+        }
+        let resetButton = UIAlertAction(title: "Reset", style: .default) { _ in
+            if let text = alert.textFields?.first?.text, !text.isEmpty {
+                self.presenter?.resetPassword(email: text)
+            }
+        }
+        alert.addAction(resetButton)
+        alert.addAction(UIAlertAction(title: "Отмена", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     private func chechAuth() {
         if self.presenter?.checkAuth() == true {
             self.presenter?.openApp()
-//            let vc = HomeViewController()
-//            vc.modalTransitionStyle = .flipHorizontal
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
         }
     }
 }
-
 

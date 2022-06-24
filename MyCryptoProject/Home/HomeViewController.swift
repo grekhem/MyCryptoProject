@@ -17,7 +17,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.presenter?.updateData()
     }
     
@@ -26,12 +26,7 @@ final class HomeViewController: UIViewController {
         self.presenter?.viewDidLoad(ui: customView)
         self.presenter?.alert = { [weak self] crypto in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Remove from watchlist", message: "Do you want to remove the \(crypto) from watchlist?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ок", style: .default) { action in
-                self.presenter?.removeFromWatchlist(crypto: crypto)
-            })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertRemove(crypto: crypto)
         }
     }
     
@@ -47,5 +42,15 @@ final class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+private extension HomeViewController {
+    func alertRemove(crypto: String) {
+        let alert = UIAlertController(title: "Remove from watchlist", message: "Do you want to remove the \(crypto) from watchlist?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default) { action in
+            self.presenter?.removeFromWatchlist(crypto: crypto)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

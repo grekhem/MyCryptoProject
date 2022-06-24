@@ -15,14 +15,13 @@ protocol ISignUpIteractor {
 
 final class SignUpIteractor {
     var enterToApp: (() -> Void)?
+    
+    private func createUser(name: String, phone: String, email: String, uid: String) {
+        DatabaseService.shared.createUser(user: UserModel(name: name, phone: phone, email: email, uid: uid, photo: nil, watchlist: nil))
+    }
 }
 
 extension SignUpIteractor: ISignUpIteractor {
-    
-    func createUser(name: String, phone: String, email: String, uid: String) {
-        DatabaseService.shared.createUser(user: UserModel(name: name, phone: phone, email: email, uid: uid, photo: nil, watchlist: nil))
-    }
-    
     func registerUser(email: String, password: String, name: String, phone: String) {
         AuthService.shared.signUp(email: email, password: password) { (result: Result<User, Error>) in
             switch result {

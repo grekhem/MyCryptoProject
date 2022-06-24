@@ -51,7 +51,6 @@ private extension LogoSloganView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configAuthLabel() {
         self.addSubview(authLabel)
         self.authLabel.snp.makeConstraints { make in
@@ -59,7 +58,6 @@ private extension LogoSloganView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configSlogan() {
         self.addSubview(sloganLabel)
         self.sloganLabel.snp.makeConstraints { make in

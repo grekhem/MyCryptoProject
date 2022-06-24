@@ -22,9 +22,7 @@ final class MarketViewController: UIViewController {
         self.presenter?.viewDidLoad(ui: customView)
         self.presenter?.alert = { [weak self] alert in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Add to watchlist", message: alert, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertAdd(alert: alert)
         }
     }
     
@@ -40,5 +38,12 @@ final class MarketViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+private extension MarketViewController {
+    func alertAdd(alert: String) {
+        let alert = UIAlertController(title: "Add to watchlist", message: alert, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

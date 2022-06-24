@@ -28,7 +28,6 @@ final class SignUpPresenter {
 }
 
 extension SignUpPresenter: ISignUpPresenter {
-    
     func viewDidLoad(uiFirst: SignUpFirstView, uiSecond: SignUpSecondView) {
         self.uiFirst = uiFirst
         self.uiSecond = uiSecond
@@ -40,6 +39,9 @@ extension SignUpPresenter: ISignUpPresenter {
             guard let self = self else { return }
             self.router.openAuthView()
         }
+        uiFirst.onTapNextButton = { name, phone in
+            self.changeUi?(name, phone)
+        }
         uiSecond.onTapSignInButton = { [weak self] in
             guard let self = self else { return }
             self.router.openAuthView()
@@ -47,9 +49,6 @@ extension SignUpPresenter: ISignUpPresenter {
         uiSecond.error = { [weak self] errorUser in
             guard let self = self else { return }
             self.error?(errorUser)
-        }
-        uiFirst.onTapNextButton = { name, phone in
-            self.changeUi?(name, phone)
         }
         uiSecond.onTapReadyButton = { email, password, name, phone in
             self.iteractor.registerUser(email: email, password: password, name: name, phone: phone)

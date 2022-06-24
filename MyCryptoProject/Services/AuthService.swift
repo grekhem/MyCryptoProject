@@ -11,7 +11,6 @@ import SwiftUI
 
 final class AuthService {
     static let shared = AuthService()
-    
     private let auth = Auth.auth()
     private var currentUser: User? {
         return auth.currentUser
@@ -37,7 +36,6 @@ final class AuthService {
             }
         }
     }
-    
     func signIn(email: String, password: String, complition: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let result = result {
@@ -45,10 +43,8 @@ final class AuthService {
             } else if let error = error {
                 complition(.failure(error))
             }
-            
         }
     }
-    
     func signOut() {
         do {
             try auth.signOut()
@@ -56,7 +52,6 @@ final class AuthService {
             print("Error signing out: %@", signOutError)
         }
     }
-    
     func resetPassword(email: String, complition: @escaping (Error?) -> Void) {
         auth.sendPasswordReset(withEmail: email) { error in
             if let error = error {
@@ -66,12 +61,14 @@ final class AuthService {
             }
         }
     }
-    
     func getUserUID() -> String? {
         let uid = auth.currentUser?.uid
         return uid
     }
-    
+    func getUserEmail() -> String? {
+        let email = auth.currentUser?.email
+        return email
+    }
     func changeEmail(email: String) {
         auth.currentUser?.updateEmail(to: email) { error in
             if let error = error {

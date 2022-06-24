@@ -8,11 +8,11 @@
 import Foundation
 
 protocol IAuthorizationPresenter: AnyObject {
+    var openResetPasswordAlert: (() -> Void)? { get set }
+    var openResetSuccessAlert: (() -> Void)? { get set }
     func viewDidLoad(ui: IAuthorizationView)
     func checkAuth() -> Bool
     func resetPassword(email: String) -> Void
-    var openResetPasswordAlert: (() -> Void)? { get set }
-    var openResetSuccessAlert: (() -> Void)? { get set }
     func openApp() -> Void
 }
 
@@ -33,11 +33,9 @@ extension AuthorizationPresenter: IAuthorizationPresenter {
     func resetPassword(email: String) {
         self.iteractor.resetPassword(email: email)
     }
-    
     func checkAuth() -> Bool {
         self.iteractor.chechAuth()
     }
-    
     func viewDidLoad(ui: IAuthorizationView) {
         self.ui = ui
         ui.onTapRegisterButton = { [weak self] in
@@ -58,7 +56,6 @@ extension AuthorizationPresenter: IAuthorizationPresenter {
             self?.openResetSuccessAlert?()
         }
     }
-    
     func openApp() {
         self.router.openApp()
     }

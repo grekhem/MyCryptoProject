@@ -10,7 +10,6 @@ import UIKit
 
 final class SettingButtonView: UIView {
     private var onTapHandler: (() -> Void)?
-    private lazy var onTap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 10
@@ -34,6 +33,7 @@ final class SettingButtonView: UIView {
         imageView.image = UIImage(named: "arrow")
         return imageView
     }()
+    private lazy var onTap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
     
     init(imageName: String, name: String, description: String, onTapHandler: (() -> Void)?) {
         super.init(frame: .zero)
@@ -60,7 +60,6 @@ private extension SettingButtonView {
         self.configDescription()
         self.configArrow()
     }
-    
     func configImage() {
         self.addSubview(imageView)
         self.imageView.snp.makeConstraints { make in
@@ -69,7 +68,6 @@ private extension SettingButtonView {
             make.height.width.equalTo(44)
         }
     }
-    
     func configName() {
         self.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
@@ -77,7 +75,6 @@ private extension SettingButtonView {
             make.leading.equalTo(imageView.snp.trailing).offset(8)
         }
     }
-    
     func configDescription() {
         self.addSubview(descriptionLabel)
         self.descriptionLabel.snp.makeConstraints { make in
@@ -85,7 +82,6 @@ private extension SettingButtonView {
             make.leading.equalTo(imageView.snp.trailing).offset(8)
         }
     }
-    
     func configArrow() {
         self.addSubview(arrowView)
         self.arrowView.snp.makeConstraints { make in
@@ -93,7 +89,6 @@ private extension SettingButtonView {
             make.trailing.equalToSuperview().inset(16)
         }
     }
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         self.onTapHandler?()
     }

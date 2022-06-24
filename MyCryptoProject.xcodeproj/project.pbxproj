@@ -32,7 +32,6 @@
 		4ABC47B428619D4800A1DDE0 /* MarketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47B328619D4800A1DDE0 /* MarketPresenter.swift */; };
 		4ABC47B628619D5A00A1DDE0 /* MarketIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47B528619D5A00A1DDE0 /* MarketIteractor.swift */; };
 		4ABC47B828619D6500A1DDE0 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47B728619D6500A1DDE0 /* MarketView.swift */; };
-		4ABC47BA28619D7000A1DDE0 /* MarketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47B928619D7000A1DDE0 /* MarketRouter.swift */; };
 		4ABC47BC28619D9600A1DDE0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47BB28619D9600A1DDE0 /* ProfileViewController.swift */; };
 		4ABC47BE28619D9E00A1DDE0 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47BD28619D9E00A1DDE0 /* ProfileAssembly.swift */; };
 		4ABC47C028619DA800A1DDE0 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47BF28619DA800A1DDE0 /* ProfilePresenter.swift */; };
@@ -72,7 +71,6 @@
 		4AF0C080285F3C840047E281 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C07F285F3C840047E281 /* HomePresenter.swift */; };
 		4AF0C082285F3C920047E281 /* HomeIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C081285F3C920047E281 /* HomeIteractor.swift */; };
 		4AF0C084285F3C9C0047E281 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C083285F3C9C0047E281 /* HomeView.swift */; };
-		4AF0C086285F3CA50047E281 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C085285F3CA50047E281 /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +100,6 @@
 		4ABC47B328619D4800A1DDE0 /* MarketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPresenter.swift; sourceTree = "<group>"; };
 		4ABC47B528619D5A00A1DDE0 /* MarketIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketIteractor.swift; sourceTree = "<group>"; };
 		4ABC47B728619D6500A1DDE0 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
-		4ABC47B928619D7000A1DDE0 /* MarketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRouter.swift; sourceTree = "<group>"; };
 		4ABC47BB28619D9600A1DDE0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4ABC47BD28619D9E00A1DDE0 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		4ABC47BF28619DA800A1DDE0 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 		4AF0C07F285F3C840047E281 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		4AF0C081285F3C920047E281 /* HomeIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIteractor.swift; sourceTree = "<group>"; };
 		4AF0C083285F3C9C0047E281 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		4AF0C085285F3CA50047E281 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,14 +172,10 @@
 		4A2F4E4E285DD9850070BAC7 /* MyCryptoProject */ = {
 			isa = PBXGroup;
 			children = (
-				4A2F4E4F285DD9850070BAC7 /* AppDelegate.swift */,
-				4A2F4E51285DD9850070BAC7 /* SceneDelegate.swift */,
 				4A2F4E72285DE6530070BAC7 /* UserModel.swift */,
-				4A2F4E83285DFD050070BAC7 /* Constants.swift */,
-				4A2F4E88285DFE8C0070BAC7 /* Constraints.swift */,
-				4AF0C078285F36AA0047E281 /* ErrorUser.swift */,
+				4ABC47E728659F2100A1DDE0 /* Supporting Files */,
 				4ABC47AB285F847400A1DDE0 /* TabBarAssembly.swift */,
-				4ABC47D2286215E900A1DDE0 /* CryptoEntity.swift */,
+				4ABC47E828659F6400A1DDE0 /* Models */,
 				4A2F4E7C285DF9B70070BAC7 /* DesignSystem */,
 				4A2F4E6F285DE30A0070BAC7 /* Services */,
 				4A2F4E68285DDF7C0070BAC7 /* Authorization */,
@@ -191,8 +183,6 @@
 				4AF0C07A285F3C420047E281 /* Home */,
 				4ABC47AD28619CF300A1DDE0 /* Market */,
 				4ABC47AE28619D0400A1DDE0 /* Profile */,
-				4A2F4E58285DD9860070BAC7 /* Assets.xcassets */,
-				4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */,
 				4A2F4E5D285DD9860070BAC7 /* Info.plist */,
 				4A2F4E63285DDAD60070BAC7 /* GoogleService-Info.plist */,
 			);
@@ -218,7 +208,6 @@
 				4A2F4E6D285DE2A50070BAC7 /* AuthService.swift */,
 				4ABC47D42862C4B800A1DDE0 /* DatabaseService.swift */,
 				4ABC47CE2862085800A1DDE0 /* NetworkService.swift */,
-				4ABC47D028620A4E00A1DDE0 /* CryptoDTO.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -267,7 +256,6 @@
 				4ABC47B528619D5A00A1DDE0 /* MarketIteractor.swift */,
 				4ABC47B728619D6500A1DDE0 /* MarketView.swift */,
 				4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */,
-				4ABC47B928619D7000A1DDE0 /* MarketRouter.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -283,6 +271,29 @@
 				4ABC47C528619DC100A1DDE0 /* ProfileRouter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		4ABC47E728659F2100A1DDE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E58285DD9860070BAC7 /* Assets.xcassets */,
+				4A2F4E83285DFD050070BAC7 /* Constants.swift */,
+				4A2F4E88285DFE8C0070BAC7 /* Constraints.swift */,
+				4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */,
+				4A2F4E51285DD9850070BAC7 /* SceneDelegate.swift */,
+				4A2F4E4F285DD9850070BAC7 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ABC47E828659F6400A1DDE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4ABC47D028620A4E00A1DDE0 /* CryptoDTO.swift */,
+				4AF0C078285F36AA0047E281 /* ErrorUser.swift */,
+				4ABC47D2286215E900A1DDE0 /* CryptoEntity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4AF0C065285EDD5F0047E281 /* SignUpFirst */ = {
@@ -307,7 +318,6 @@
 				4AF0C07F285F3C840047E281 /* HomePresenter.swift */,
 				4AF0C081285F3C920047E281 /* HomeIteractor.swift */,
 				4AF0C083285F3C9C0047E281 /* HomeView.swift */,
-				4AF0C085285F3CA50047E281 /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -406,7 +416,6 @@
 				4ABC47C82861B10C00A1DDE0 /* CryptoCurrencyView.swift in Sources */,
 				4A2F4E81285DFA660070BAC7 /* AppFonts.swift in Sources */,
 				4A2F4E77285DEF730070BAC7 /* AuthorizationPresenter.swift in Sources */,
-				4ABC47BA28619D7000A1DDE0 /* MarketRouter.swift in Sources */,
 				4ABC47D52862C4B800A1DDE0 /* DatabaseService.swift in Sources */,
 				4A2F4E79285DF0720070BAC7 /* AuthorizationIteractor.swift in Sources */,
 				4AF0C06F285EDDCA0047E281 /* SignUpRouter.swift in Sources */,
@@ -435,7 +444,6 @@
 				4AF0C079285F36AA0047E281 /* ErrorUser.swift in Sources */,
 				4ABC47B828619D6500A1DDE0 /* MarketView.swift in Sources */,
 				4ABC47C228619DB300A1DDE0 /* ProfileIteractor.swift in Sources */,
-				4AF0C086285F3CA50047E281 /* HomeRouter.swift in Sources */,
 				4A2F4E71285DE5700070BAC7 /* AuthorizationView.swift in Sources */,
 				4ABC47D128620A4E00A1DDE0 /* CryptoDTO.swift in Sources */,
 				4A2F4E6E285DE2A50070BAC7 /* AuthService.swift in Sources */,

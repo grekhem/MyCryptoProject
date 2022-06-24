@@ -11,13 +11,12 @@ import UIKit
 protocol IHomeView: AnyObject {
     var watchlist: [CryptoEntity]? { get set }
     var user: UserModel? { get set }
+    var addAlert: ((String) -> Void)? { get set }
+    var updateData: (() -> Void)? { get set }
     func configCryptoView() -> Void
     func updateName() -> Void
     func updatePhoto() -> Void
     func updateGreeting(greeting: String) -> Void
-    var addAlert: ((String) -> Void)? { get set }
-    var updateData: (() -> Void)? { get set }
-    
 }
 
 final class HomeView: UIView {
@@ -84,20 +83,16 @@ final class HomeView: UIView {
 }
 
 extension HomeView: IHomeView {
-    
     func updatePhoto() {
         self.photoImageView.image = self.user?.photo
+        self.reloadInputViews()
     }
-    
-    
     func updateGreeting(greeting: String) -> Void {
         self.greetingLabel.text = greeting
     }
-    
     func updateName() -> Void {
         self.nameLabel.text = self.user?.name
     }
-    
     func configCryptoView() {
         let array = self.stackView.arrangedSubviews
         for i in array {
@@ -117,7 +112,6 @@ extension HomeView: IHomeView {
 }
 
 private extension HomeView {
-    
     func configUI() {
         configScrollView()
         configContentView()
@@ -128,14 +122,12 @@ private extension HomeView {
         configWatchlistLabel()
         configStackView()
     }
-    
     func configScrollView() {
         self.addSubview(scrollView)
         self.scrollView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
     }
-    
     func configContentView() {
         self.scrollView.addSubview(contentView)
         self.contentView.snp.makeConstraints { make in
@@ -143,7 +135,6 @@ private extension HomeView {
             make.width.equalTo(scrollView)
         }
     }
-    
     func configPhotoView() {
         self.contentView.addSubview(photoImageView)
         self.photoImageView.snp.makeConstraints { make in
@@ -152,7 +143,6 @@ private extension HomeView {
             make.height.width.equalTo(40)
         }
     }
-    
     func configGreeting() {
         self.contentView.addSubview(greetingLabel)
         self.greetingLabel.snp.makeConstraints { make in
@@ -160,7 +150,6 @@ private extension HomeView {
             make.leading.equalTo(photoImageView.snp.trailing).offset(Constraints.greetingNameLeadind)
         }
     }
-    
     func configName() {
         self.contentView.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
@@ -168,7 +157,6 @@ private extension HomeView {
             make.leading.equalTo(photoImageView.snp.trailing).offset(Constraints.greetingNameLeadind)
         }
     }
-    
     func configUpdateButton() {
         self.updateButton.addTarget(self, action: #selector(pressedUpdateButton), for: .touchUpInside)
         self.contentView.addSubview(updateButton)
@@ -178,7 +166,6 @@ private extension HomeView {
             make.height.width.equalTo(24)
         }
     }
-    
     func configWatchlistLabel() {
         self.contentView.addSubview(watchlistLabel)
         self.watchlistLabel.snp.makeConstraints { make in
@@ -186,7 +173,6 @@ private extension HomeView {
             make.top.equalTo(photoImageView.snp.bottom).offset(Constraints.watchlistTop)
         }
     }
-    
     func configStackView() {
         self.contentView.addSubview(stackView)
         self.stackView.snp.makeConstraints { make in
@@ -195,7 +181,6 @@ private extension HomeView {
             make.bottom.equalToSuperview()
         }
     }
-    
     @objc func pressedUpdateButton() {
         self.updateData?()
         self.updateButton.transform = CGAffineTransform.identity
@@ -206,8 +191,6 @@ private extension HomeView {
                        options: UIView.AnimationOptions.allowUserInteraction,
                        animations: {
             self.updateButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        },
-                       completion: nil
-        )
+        }, completion: nil )
     }
 }

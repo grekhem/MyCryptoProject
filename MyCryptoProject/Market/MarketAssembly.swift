@@ -9,11 +9,9 @@ import UIKit
 
 enum MarketAssembly {
     static func buildModule(networkService: INetworkService) -> UIViewController {
-        let router = MarketRouter()
         let iteractor = MarketIteractor(networkService: networkService)
-        let presenter = MarketPresenter(router: router, iteractor: iteractor)
+        let presenter = MarketPresenter(iteractor: iteractor)
         let controller = MarketViewController(presenter: presenter)
-        router.vc = controller
         return controller
     }
 }

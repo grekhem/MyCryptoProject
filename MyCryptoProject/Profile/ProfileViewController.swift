@@ -20,15 +20,7 @@ final class ProfileViewController: UIViewController {
         self.presenter?.viewDidLoad(ui: customView)
         self.presenter?.alert = { [weak self] in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-                self.presenter?.openCamera()
-            }))
-            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-                self.presenter?.openGallery()
-            }))
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertChooseImage()
         }
         self.presenter?.openPicker = { [weak self] picker in
             guard let self = self else { return }
@@ -36,22 +28,11 @@ final class ProfileViewController: UIViewController {
         }
         self.presenter?.pickerAlert = { [weak self] alert in
             guard let self = self else { return }
-            let alert  = UIAlertController(title: "Warning", message: alert, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertPicker(alert: alert)
         }
         self.presenter?.privasyAlert = { [weak self] in
             guard let self = self else { return }
-            let alert = UIAlertController(title: "Change", message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Email", style: .default, handler: { _ in
-                self.emailAlert()
-            }))
-            alert.addAction(UIAlertAction(title: "Password", style: .default, handler: { _ in
-                self.presenter?.changePassword()
-                self.passwordAlert()
-            }))
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.alertPrivasy()
         }
     }
     
@@ -71,13 +52,39 @@ final class ProfileViewController: UIViewController {
 }
 
 private extension ProfileViewController {
-    
+    func alertPrivasy() {
+        let alert = UIAlertController(title: "Change", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Email", style: .default, handler: { _ in
+            self.emailAlert()
+        }))
+        alert.addAction(UIAlertAction(title: "Password", style: .default, handler: { _ in
+            self.presenter?.changePassword()
+            self.passwordAlert()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func alertPicker(alert: String) {
+        let alert  = UIAlertController(title: "Warning", message: alert, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func alertChooseImage() {
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.presenter?.openCamera()
+        }))
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.presenter?.openGallery()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     func passwordAlert() {
         let alert = UIAlertController(title: "Password reset", message: "Check email", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     func emailAlert() {
         let alert = UIAlertController(title: "New email", message: nil, preferredStyle: .alert)
         alert.addTextField { textField in

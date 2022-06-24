@@ -8,9 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseStorage
-import FirebaseFirestoreSwift
 import FirebaseDatabase
-import FirebaseFirestore
 import UIKit
 
 final class DatabaseService {
@@ -111,5 +109,4 @@ final class DatabaseService {
             }
         }
     }
-    
 }

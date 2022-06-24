@@ -28,16 +28,13 @@ class HomeIteractor {
         self.networkService = networkService
         self.getUser()
     }
-    
 }
 
 extension HomeIteractor: IHomeIteractor {
-    
     func removeFromWatchlist(crypto: String) -> Void {
         DatabaseService.shared.removeWatchlist(crypto: crypto)
         self.update()
     }
-    
     func update() {
         guard let uid = AuthService.shared.getUserUID() else { return }
         DatabaseService.shared.getUser(uid: uid) { [weak self] user in
@@ -47,19 +44,6 @@ extension HomeIteractor: IHomeIteractor {
             self.getPhoto(uid: user.uid)
         }
     }
-    
-    func getArrayModelWatchlist() {
-        var array = [CryptoEntity]()
-        for data in self.data {
-            if self.watchlist.contains(where: { $0 == data.symbol }) {
-                if array.contains(where: { $0.symbol == data.symbol}) == false {
-                    array.append(data)
-                }
-            }
-        }
-        self.getArrayEntity?(array)
-    }
-    
     func fetchData() {
         self.networkService.loadData { (result: Result<CryptoDTO, Error>) in
             switch result {
@@ -74,12 +58,20 @@ extension HomeIteractor: IHomeIteractor {
             }
         }
     }
-
 }
 
 private extension HomeIteractor {
-
-    
+    func getArrayModelWatchlist() {
+        var array = [CryptoEntity]()
+        for data in self.data {
+            if self.watchlist.contains(where: { $0 == data.symbol }) {
+                if array.contains(where: { $0.symbol == data.symbol}) == false {
+                    array.append(data)
+                }
+            }
+        }
+        self.getArrayEntity?(array)
+    }
     func getPhoto(uid: String?) {
         guard let uid = uid else { return }
         DatabaseService.shared.getImageFromDB(photoName: uid) { [weak self] image in
@@ -88,7 +80,6 @@ private extension HomeIteractor {
             self.getUserInfo?(self.user)
         }
     }
-    
     func getUser() {
         guard let uid = AuthService.shared.getUserUID() else { return }
         DatabaseService.shared.getUser(uid: uid) { [weak self] user in
@@ -99,7 +90,6 @@ private extension HomeIteractor {
             self.getPhoto(uid: user.uid)
         }
     }
-    
     func modelingData(data: CryptoDTO) {
         var count = 0
         for i in 0..<data.data.count {
@@ -138,6 +128,4 @@ private extension HomeIteractor {
             }
         }
     }
-    
-    
 }

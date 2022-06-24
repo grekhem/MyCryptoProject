@@ -72,9 +72,7 @@ final class SignUpSecondView: UIView {
     }
 }
 
-extension SignUpSecondView: ISignUpSecondView {
-    
-}
+extension SignUpSecondView: ISignUpSecondView {}
 
 private extension SignUpSecondView {
     func configUI() {
@@ -88,7 +86,6 @@ private extension SignUpSecondView {
         self.configReadyButton()
         self.configSignInButton()
     }
-    
     func configLogo() {
         self.addSubview(logoView)
         self.logoView.snp.makeConstraints { make in
@@ -96,7 +93,6 @@ private extension SignUpSecondView {
             make.centerX.equalToSuperview()
         }
     }
-    
     func configEmailView() {
         self.addSubview(emailView)
         self.emailView.snp.makeConstraints { make in
@@ -104,7 +100,6 @@ private extension SignUpSecondView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configPasswordView() {
         self.addSubview(passwordView)
         self.passwordView.snp.makeConstraints { make in
@@ -112,7 +107,6 @@ private extension SignUpSecondView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configConfirmView() {
         self.addSubview(confirmView)
         self.confirmView.snp.makeConstraints { make in
@@ -120,7 +114,6 @@ private extension SignUpSecondView {
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
-    
     func configCheckBox() {
         self.addSubview(checkBox)
         self.checkBox.snp.makeConstraints { make in
@@ -130,7 +123,6 @@ private extension SignUpSecondView {
             make.width.equalTo(24)
         }
     }
-    
     func configAgreeButton() {
         self.agreeButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         self.addSubview(agreeButton)
@@ -141,7 +133,6 @@ private extension SignUpSecondView {
             make.trailing.equalToSuperview().offset(-Constraints.InsetHorizontal)
         }
     }
-    
     func configReadyButton() {
         self.readyButton.addTarget(self, action: #selector(pressedReadyButton), for: .touchUpInside)
         self.addSubview(readyButton)
@@ -151,7 +142,6 @@ private extension SignUpSecondView {
             make.height.equalTo(Constraints.enterButtonHeight)
         }
     }
-    
     func configSignInButton() {
         self.signInButton.addTarget(self, action: #selector(pressedSignInButton), for: .touchUpInside)
         self.addSubview(signInButton)
@@ -161,21 +151,17 @@ private extension SignUpSecondView {
             make.bottom.equalToSuperview().priority(.low)
         }
     }
-    
     @objc func pressedSignInButton() {
         onTapSignInButton?()
     }
-    
     @objc func pressedCheckBox() {
         self.isCheck.toggle()
     }
-    
     @objc func pressedAgreeButton() {
         if let url = URL(string: "https://developer.apple.com/support/terms/") {
             UIApplication.shared.open(url)
         }
     }
-    
     @objc func pressedReadyButton() {
         if let email = self.emailView.getTextFromField(), let password = self.passwordView.getTextFromField(), let confirm = self.confirmView.getTextFromField() {
             if password == confirm {

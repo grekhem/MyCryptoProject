@@ -15,11 +15,11 @@ enum ErrorUser {
     var text: String {
         switch self {
         case .notConfirmPassword:
-            return "Пароли не совпадают"
+            return "Password do not match"
         case .invalidPassword:
-            return "Неправильный пароль"
+            return "Wrong password"
         case .notCheck:
-            return "Необходимо согласиться с условиями"
+            return "You will need to read and accept the Terms and conditions"
         }
     }
 }

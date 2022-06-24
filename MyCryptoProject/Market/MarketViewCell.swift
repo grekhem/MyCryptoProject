@@ -9,17 +9,14 @@ import Foundation
 import UIKit
 
 final class MarketViewCell: UITableViewCell {
-    
+    static let id = String(describing: MarketViewCell.self)
     private let name: String
     private let symbol: String
     private let price: String
     private let percent: String
     private let isRising: Bool
     private let view = UIView()
-    lazy var spacingView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 10))
-    
-    static let id = String(describing: MarketViewCell.self)
-    
+    private lazy var spacingView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 10))
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         if let image = UIImage(named: self.symbol.lowercased()) {
@@ -82,13 +79,10 @@ final class MarketViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
 
 private extension MarketViewCell {
     func configUi() {
-    
         self.spacingView.backgroundColor = .green
         configView()
         configIcon()
@@ -98,7 +92,6 @@ private extension MarketViewCell {
         configPercent()
         configSpacing()
     }
-    
     func configView() {
         self.addSubview(view)
         self.backgroundColor = Color.gray.color
@@ -109,7 +102,6 @@ private extension MarketViewCell {
             make.leading.trailing.equalToSuperview()
         }
     }
-    
     func configIcon() {
         self.view.addSubview(iconImageView)
         self.iconImageView.snp.makeConstraints { make in
@@ -119,7 +111,6 @@ private extension MarketViewCell {
             make.height.width.equalTo(64)
         }
     }
-    
     func configSymbol() {
         self.view.addSubview(symbolLabel)
         self.symbolLabel.snp.makeConstraints { make in
@@ -127,7 +118,6 @@ private extension MarketViewCell {
             make.top.equalToSuperview().offset(Constraints.cryptoSymbolTop)
         }
     }
-    
     func configName() {
         self.view.addSubview(nameLabel)
         self.nameLabel.snp.makeConstraints { make in
@@ -135,7 +125,6 @@ private extension MarketViewCell {
             make.top.equalTo(symbolLabel.snp.bottom).offset(Constraints.cryptoNameTop)
         }
     }
-    
     func configPrice() {
         self.view.addSubview(priceLabel)
         self.priceLabel.snp.makeConstraints { make in
@@ -143,7 +132,6 @@ private extension MarketViewCell {
             make.trailing.equalToSuperview().offset(-Constraints.cryptoHorizontal)
         }
     }
-    
     func configPercent() {
         self.view.addSubview(percentLabel)
         self.percentLabel.snp.makeConstraints { make in
@@ -153,7 +141,6 @@ private extension MarketViewCell {
             make.trailing.equalToSuperview().offset(-Constraints.cryptoHorizontal)
         }
     }
-    
     func configSpacing() {
         self.addSubview(spacingView)
         self.spacingView.snp.makeConstraints { make in
@@ -161,6 +148,5 @@ private extension MarketViewCell {
             make.bottom.equalToSuperview()
             make.height.equalTo(10)
         }
-        
     }
 }

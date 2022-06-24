@@ -10,12 +10,7 @@ import Foundation
 protocol INetworkService {
     func loadData<T:Decodable>(completion: @escaping (Result<T, Error>) -> ())
 }
-
-final class NetworkService {
-    
-    
-    
-}
+final class NetworkService {}
 
 extension NetworkService: INetworkService {
     
@@ -36,5 +31,4 @@ extension NetworkService: INetworkService {
             }
         }.resume()
     }
-    
 }
