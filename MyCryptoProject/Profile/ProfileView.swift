@@ -11,13 +11,13 @@ import UIKit
 protocol IProfileView: AnyObject {
     var addAlert: (() -> Void)? { get set }
     var logOut: (() -> Void)? { get set }
-    var privasy: (() -> Void)? { get set }
+    var privaсy: (() -> Void)? { get set }
     func changePhoto(photo: UIImage)
     func setName(name: String)
 }
 
 final class ProfileView: UIView {
-    var privasy: (() -> Void)?
+    var privaсy: (() -> Void)?
     var logOut: (() -> Void)?
     var addAlert: (() -> Void)?
     private lazy var onEditPhoto = UITapGestureRecognizer(target: self, action: #selector(self.editPhoto(_:)))
@@ -48,10 +48,10 @@ final class ProfileView: UIView {
         label.textColor = Color.darkGreen.color
         return label
     }()
-    private lazy var privasyView = SettingButtonView(imageName: "privasy", name: "Privasy", description: "Change email and password") {
+    private lazy var privasyView = SettingButtonView(imageName: "privasy", name: "Privaсy", description: "Change email and password") {
         [weak self] in
         guard let self = self else { return }
-        self.privasy?()
+        self.privaсy?()
     }
     private lazy var logOutView = SettingButtonView(imageName: "logout", name: "Log out", description: "Exit the app") {
         [weak self] in

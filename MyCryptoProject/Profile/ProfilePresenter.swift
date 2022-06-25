@@ -100,7 +100,7 @@ extension ProfilePresenter: IProfilePresenter {
             self.iteractor.logOut()
             self.router.logOut()
         }
-        self.ui?.privasy = { [weak self] in
+        self.ui?.privaсy = { [weak self] in
             guard let self = self else { return }
             self.privasyAlert?()
         }
