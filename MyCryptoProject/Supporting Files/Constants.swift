@@ -13,5 +13,6 @@ enum Constants {
     static let enterButtonRadius: CGFloat = 4
     static let percentRadius: CGFloat = 8
     static let cryptoViewRadius: CGFloat = 10
+    static let assetViewRadius: CGFloat = 10
     static let stackSpacing: CGFloat = 10
 }

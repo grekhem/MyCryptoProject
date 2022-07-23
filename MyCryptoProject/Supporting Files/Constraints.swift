@@ -20,7 +20,7 @@ enum Constraints {
     static let enterButtonHeight: CGFloat = 38
     static let photoAndGreetingTop: CGFloat = 16
     static let greetingNameLeadind: CGFloat = 10
-    static let watchlistTop: CGFloat = 24
+    static let homeLabelTop: CGFloat = 24
     static let scrollViewTop: CGFloat = 12
     static let cryptoIconVertical: CGFloat = 12
     static let cryptoHorizontal: CGFloat = 16
@@ -29,4 +29,15 @@ enum Constraints {
     static let cryptoNameTop: CGFloat = 8
     static let cryptoViewVertical: CGFloat = 10
     static let marketTextFieldTop: CGFloat = 16
+    static let portofolioViewTop: CGFloat = 16
+    static let portofolioLabelTop: CGFloat = 25
+    static let portofolioLabelLeading: CGFloat = 23
+    static let totalLabelTop: CGFloat = 0
+    static let portofolioPercentTrailing: CGFloat = 24
+    static let assetsHorizontalVerticalInset: CGFloat = 16
+    static let assetSymbolTop: CGFloat = 20
+    static let assetSymbolNameLeading: CGFloat = 8
+    static let assetLabelsTop: CGFloat = 4
+    static let assetSeparatorVertical: CGFloat = 8
+
 }

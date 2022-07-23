@@ -52,6 +52,8 @@
 		4ABC47E22862C91E00A1DDE0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC47E12862C91E00A1DDE0 /* FirebaseStorage */; };
 		4ABC47E4286321E600A1DDE0 /* MarketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */; };
 		4ABC47E62864983D00A1DDE0 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */; };
+		4ABC47F028718B2000A1DDE0 /* MyCryptoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47EF28718B2000A1DDE0 /* MyCryptoProjectTests.swift */; };
+		4ABC47F7288C241000A1DDE0 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC47F6288C241000A1DDE0 /* AssetView.swift */; };
 		4AF0C05E285E1E460047E281 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */; };
 		4AF0C060285E1E710047E281 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */; };
 		4AF0C062285E1E830047E281 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */; };
@@ -72,6 +74,16 @@
 		4AF0C082285F3C920047E281 /* HomeIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C081285F3C920047E281 /* HomeIteractor.swift */; };
 		4AF0C084285F3C9C0047E281 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C083285F3C9C0047E281 /* HomeView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ABC47F128718B2000A1DDE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A2F4E44285DD9850070BAC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A2F4E4B285DD9850070BAC7;
+			remoteInfo = MyCryptoProject;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCryptoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +126,9 @@
 		4ABC47D42862C4B800A1DDE0 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		4ABC47E3286321E600A1DDE0 /* MarketViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewCell.swift; sourceTree = "<group>"; };
 		4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
+		4ABC47ED28718B2000A1DDE0 /* MyCryptoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCryptoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABC47EF28718B2000A1DDE0 /* MyCryptoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCryptoProjectTests.swift; sourceTree = "<group>"; };
+		4ABC47F6288C241000A1DDE0 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
 		4AF0C05D285E1E460047E281 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
 		4AF0C05F285E1E710047E281 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
 		4AF0C061285E1E830047E281 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -150,6 +165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4ABC47EA28718B2000A1DDE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4A2F4E4E285DD9850070BAC7 /* MyCryptoProject */,
+				4ABC47EE28718B2000A1DDE0 /* MyCryptoProjectTests */,
 				4A2F4E4D285DD9850070BAC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */,
+				4ABC47ED28718B2000A1DDE0 /* MyCryptoProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +267,7 @@
 				4AF0C074285EF81B0047E281 /* UnderLineButton.swift */,
 				4ABC47C72861B10C00A1DDE0 /* CryptoCurrencyView.swift */,
 				4ABC47E52864983D00A1DDE0 /* SettingButtonView.swift */,
+				4ABC47F6288C241000A1DDE0 /* AssetView.swift */,
 			);
 			path = ReusibleView;
 			sourceTree = "<group>";
@@ -294,6 +319,14 @@
 				4ABC47D2286215E900A1DDE0 /* CryptoEntity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4ABC47EE28718B2000A1DDE0 /* MyCryptoProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ABC47EF28718B2000A1DDE0 /* MyCryptoProjectTests.swift */,
+			);
+			path = MyCryptoProjectTests;
 			sourceTree = "<group>";
 		};
 		4AF0C065285EDD5F0047E281 /* SignUpFirst */ = {
@@ -351,6 +384,24 @@
 			productReference = 4A2F4E4C285DD9850070BAC7 /* MyCryptoProject.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4ABC47EC28718B2000A1DDE0 /* MyCryptoProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ABC47F528718B2000A1DDE0 /* Build configuration list for PBXNativeTarget "MyCryptoProjectTests" */;
+			buildPhases = (
+				4ABC47E928718B2000A1DDE0 /* Sources */,
+				4ABC47EA28718B2000A1DDE0 /* Frameworks */,
+				4ABC47EB28718B2000A1DDE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ABC47F228718B2000A1DDE0 /* PBXTargetDependency */,
+			);
+			name = MyCryptoProjectTests;
+			productName = MyCryptoProjectTests;
+			productReference = 4ABC47ED28718B2000A1DDE0 /* MyCryptoProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,6 +414,10 @@
 				TargetAttributes = {
 					4A2F4E4B285DD9850070BAC7 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					4ABC47EC28718B2000A1DDE0 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 4A2F4E4B285DD9850070BAC7;
 					};
 				};
 			};
@@ -384,6 +439,7 @@
 			projectRoot = "";
 			targets = (
 				4A2F4E4B285DD9850070BAC7 /* MyCryptoProject */,
+				4ABC47EC28718B2000A1DDE0 /* MyCryptoProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -400,6 +456,13 @@
 				4AF0C05E285E1E460047E281 /* Mulish-Bold.ttf in Resources */,
 				4AF0C062285E1E830047E281 /* Montserrat-Medium.ttf in Resources */,
 				4AF0C060285E1E710047E281 /* Mulish-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABC47EB28718B2000A1DDE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,10 +523,27 @@
 				4AF0C064285EDB710047E281 /* LogoSloganView.swift in Sources */,
 				4AF0C073285EF6660047E281 /* GreenButton.swift in Sources */,
 				4AF0C071285EDDDC0047E281 /* SignUpFirstView.swift in Sources */,
+				4ABC47F7288C241000A1DDE0 /* AssetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABC47E928718B2000A1DDE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ABC47F028718B2000A1DDE0 /* MyCryptoProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ABC47F228718B2000A1DDE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A2F4E4B285DD9850070BAC7 /* MyCryptoProject */;
+			targetProxy = 4ABC47F128718B2000A1DDE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4A2F4E5A285DD9860070BAC7 /* LaunchScreen.storyboard */ = {
@@ -649,6 +729,40 @@
 			};
 			name = Release;
 		};
+		4ABC47F328718B2000A1DDE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.astral.MyCryptoProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCryptoProject.app/MyCryptoProject";
+			};
+			name = Debug;
+		};
+		4ABC47F428718B2000A1DDE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.astral.MyCryptoProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCryptoProject.app/MyCryptoProject";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -666,6 +780,15 @@
 			buildConfigurations = (
 				4A2F4E61285DD9860070BAC7 /* Debug */,
 				4A2F4E62285DD9860070BAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ABC47F528718B2000A1DDE0 /* Build configuration list for PBXNativeTarget "MyCryptoProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ABC47F328718B2000A1DDE0 /* Debug */,
+				4ABC47F428718B2000A1DDE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
