@@ -22,7 +22,7 @@ final class AssetView: UIView {
     }()
     private let portofolioLabel: UILabel = {
         let label = UILabel()
-        label.text = "Portofolio"
+        label.text = "Portfolio"
         label.font = AppFonts.mulishRegular10.font
         label.textColor = Color.darkGrey.color
         return label
@@ -107,9 +107,9 @@ private extension AssetView {
         configNameLabel()
         configPercentLabel()
         configSeparator()
-        configPortofolioLabel()
+        configPortfolioLabel()
         configTotalLabel()
-        configPortofolioTotalLabel()
+        configPortfolioTotalLabel()
     }
     func configImage() {
         self.addSubview(iconImageView)
@@ -149,7 +149,7 @@ private extension AssetView {
             make.height.equalTo(2)
         }
     }
-    func configPortofolioLabel() {
+    func configPortfolioLabel() {
         self.addSubview(portofolioLabel)
         self.portofolioLabel.snp.makeConstraints { make in
             make.top.equalTo(viewSeparator.snp.bottom).offset(Constraints.assetSeparatorVertical)
@@ -164,7 +164,7 @@ private extension AssetView {
             make.bottom.equalToSuperview().inset(Constraints.assetsHorizontalVerticalInset)
         }
     }
-    func configPortofolioTotalLabel() {
+    func configPortfolioTotalLabel() {
         self.addSubview(portofolioTotalLabel)
         self.portofolioTotalLabel.snp.makeConstraints { make in
             make.centerY.equalTo(totalLabel.snp.centerY)

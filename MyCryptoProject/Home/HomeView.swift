@@ -230,29 +230,29 @@ private extension HomeView {
     func configPortofolioView() {
         self.contentView.addSubview(portofolioView)
         self.portofolioView.snp.makeConstraints { make in
-            make.top.equalTo(photoImageView.snp.bottom).offset(Constraints.portofolioViewTop)
+            make.top.equalTo(photoImageView.snp.bottom).offset(Constraints.portfolioViewTop)
             make.leading.trailing.equalToSuperview().inset(Constraints.InsetHorizontal)
         }
     }
     func configPortofolioLabel() {
         self.portofolioView.addSubview(portofolioLabel)
         self.portofolioLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(Constraints.portofolioLabelTop)
-            make.leading.equalToSuperview().offset(Constraints.portofolioLabelLeading)
+            make.top.equalToSuperview().inset(Constraints.portfolioLabelTop)
+            make.leading.equalToSuperview().offset(Constraints.portfolioLabelLeading)
         }
     }
     func configTotalLabel() {
         self.portofolioView.addSubview(totalLabel)
         self.totalLabel.snp.makeConstraints { make in
             make.top.equalTo(portofolioLabel.snp.bottom).offset(Constraints.totalLabelTop)
-            make.leading.equalToSuperview().offset(Constraints.portofolioLabelLeading)
+            make.leading.equalToSuperview().offset(Constraints.portfolioLabelLeading)
         }
     }
     func configPercent() {
         self.portofolioView.addSubview(percentLabel)
         self.percentLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(Constraints.portofolioPercentTrailing)
+            make.trailing.equalToSuperview().inset(Constraints.portfolioPercentTrailing)
             make.height.equalTo(32)
             make.width.equalTo(73)
         }

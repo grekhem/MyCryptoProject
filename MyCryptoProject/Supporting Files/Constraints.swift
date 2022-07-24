@@ -29,11 +29,11 @@ enum Constraints {
     static let cryptoNameTop: CGFloat = 8
     static let cryptoViewVertical: CGFloat = 10
     static let marketTextFieldTop: CGFloat = 16
-    static let portofolioViewTop: CGFloat = 16
-    static let portofolioLabelTop: CGFloat = 25
-    static let portofolioLabelLeading: CGFloat = 23
+    static let portfolioViewTop: CGFloat = 16
+    static let portfolioLabelTop: CGFloat = 25
+    static let portfolioLabelLeading: CGFloat = 23
     static let totalLabelTop: CGFloat = 0
-    static let portofolioPercentTrailing: CGFloat = 24
+    static let portfolioPercentTrailing: CGFloat = 24
     static let assetsHorizontalVerticalInset: CGFloat = 16
     static let assetSymbolTop: CGFloat = 20
     static let assetSymbolNameLeading: CGFloat = 8
